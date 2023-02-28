@@ -1,0 +1,856 @@
+Classic Timing Analyzer report for Project
+Wed Feb 01 23:27:04 2023
+Quartus II Version 8.1 Build 163 10/28/2008 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Timing Analyzer Summary
+  3. Timing Analyzer Settings
+  4. Clock Settings Summary
+  5. Clock Setup: 'clk'
+  6. tsu
+  7. tco
+  8. th
+  9. Timing Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2008 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Timing Analyzer Summary                                                                                                                                                                                ;
++------------------------------+-------+---------------+----------------------------------+-----------------------------------+-----------------------------------+------------+----------+--------------+
+; Type                         ; Slack ; Required Time ; Actual Time                      ; From                              ; To                                ; From Clock ; To Clock ; Failed Paths ;
++------------------------------+-------+---------------+----------------------------------+-----------------------------------+-----------------------------------+------------+----------+--------------+
+; Worst-case tsu               ; N/A   ; None          ; 51.400 ns                        ; select[1]                         ; DigitalTicketCounter:DTC|money[3] ; --         ; clk      ; 0            ;
+; Worst-case tco               ; N/A   ; None          ; 18.300 ns                        ; DIG3C:D1|seg[0]                   ; mdisp[0]                          ; clk        ; --       ; 0            ;
+; Worst-case th                ; N/A   ; None          ; 7.100 ns                         ; pricec                            ; Debounce:d6|D_FF:d1|Q             ; --         ; clk      ; 0            ;
+; Clock Setup: 'clk'           ; N/A   ; None          ; 9.30 MHz ( period = 107.500 ns ) ; DigitalTicketCounter:DTC|money[4] ; DIG3C:D1|seg[0]                   ; clk        ; clk      ; 0            ;
+; Total number of failed paths ;       ;               ;                                  ;                                   ;                                   ;            ;          ; 0            ;
++------------------------------+-------+---------------+----------------------------------+-----------------------------------+-----------------------------------+------------+----------+--------------+
+
+
++--------------------------------------------------------------------------------------------------------------------+
+; Timing Analyzer Settings                                                                                           ;
++---------------------------------------------------------------------+--------------------+------+----+-------------+
+; Option                                                              ; Setting            ; From ; To ; Entity Name ;
++---------------------------------------------------------------------+--------------------+------+----+-------------+
+; Device Name                                                         ; EPF10K70RC240-4    ;      ;    ;             ;
+; Timing Models                                                       ; Final              ;      ;    ;             ;
+; Default hold multicycle                                             ; Same as Multicycle ;      ;    ;             ;
+; Cut paths between unrelated clock domains                           ; On                 ;      ;    ;             ;
+; Cut off read during write signal paths                              ; On                 ;      ;    ;             ;
+; Cut off feedback from I/O pins                                      ; On                 ;      ;    ;             ;
+; Report Combined Fast/Slow Timing                                    ; Off                ;      ;    ;             ;
+; Ignore Clock Settings                                               ; Off                ;      ;    ;             ;
+; Analyze latches as synchronous elements                             ; On                 ;      ;    ;             ;
+; Enable Recovery/Removal analysis                                    ; Off                ;      ;    ;             ;
+; Enable Clock Latency                                                ; Off                ;      ;    ;             ;
+; Use TimeQuest Timing Analyzer                                       ; Off                ;      ;    ;             ;
+; Number of source nodes to report per destination node               ; 10                 ;      ;    ;             ;
+; Number of destination nodes to report                               ; 10                 ;      ;    ;             ;
+; Number of paths to report                                           ; 200                ;      ;    ;             ;
+; Report Minimum Timing Checks                                        ; Off                ;      ;    ;             ;
+; Use Fast Timing Models                                              ; Off                ;      ;    ;             ;
+; Report IO Paths Separately                                          ; Off                ;      ;    ;             ;
+; Perform Multicorner Analysis                                        ; Off                ;      ;    ;             ;
+; Reports the worst-case path for each clock domain and analysis      ; Off                ;      ;    ;             ;
+; Removes common clock path pessimism (CCPP) during slack computation ; Off                ;      ;    ;             ;
+; Output I/O Timing Endpoint                                          ; Near End           ;      ;    ;             ;
++---------------------------------------------------------------------+--------------------+------+----+-------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clock Settings Summary                                                                                                                                                             ;
++-----------------+--------------------+----------+------------------+---------------+--------------+----------+-----------------------+---------------------+--------+--------------+
+; Clock Node Name ; Clock Setting Name ; Type     ; Fmax Requirement ; Early Latency ; Late Latency ; Based on ; Multiply Base Fmax by ; Divide Base Fmax by ; Offset ; Phase offset ;
++-----------------+--------------------+----------+------------------+---------------+--------------+----------+-----------------------+---------------------+--------+--------------+
+; clk             ;                    ; User Pin ; None             ; 0.000 ns      ; 0.000 ns     ; --       ; N/A                   ; N/A                 ; N/A    ;              ;
++-----------------+--------------------+----------+------------------+---------------+--------------+----------+-----------------------+---------------------+--------+--------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clock Setup: 'clk'                                                                                                                                                                                                                                                                  ;
++-----------------------------------------+-----------------------------------------------------+------------------------------------+------------------------------------+------------+----------+-----------------------------+---------------------------+-------------------------+
+; Slack                                   ; Actual fmax (period)                                ; From                               ; To                                 ; From Clock ; To Clock ; Required Setup Relationship ; Required Longest P2P Time ; Actual Longest P2P Time ;
++-----------------------------------------+-----------------------------------------------------+------------------------------------+------------------------------------+------------+----------+-----------------------------+---------------------------+-------------------------+
+; N/A                                     ; 9.30 MHz ( period = 107.500 ns )                    ; DigitalTicketCounter:DTC|money[4]  ; DIG3C:D1|seg[0]                    ; clk        ; clk      ; None                        ; None                      ; 103.500 ns              ;
+; N/A                                     ; 9.31 MHz ( period = 107.400 ns )                    ; DigitalTicketCounter:DTC|money[4]  ; DIG3C:D1|seg[6]                    ; clk        ; clk      ; None                        ; None                      ; 103.400 ns              ;
+; N/A                                     ; 9.32 MHz ( period = 107.300 ns )                    ; DigitalTicketCounter:DTC|money[4]  ; DIG3C:D1|seg[2]                    ; clk        ; clk      ; None                        ; None                      ; 103.300 ns              ;
+; N/A                                     ; 9.32 MHz ( period = 107.300 ns )                    ; DigitalTicketCounter:DTC|money[4]  ; DIG3C:D1|seg[3]                    ; clk        ; clk      ; None                        ; None                      ; 103.300 ns              ;
+; N/A                                     ; 9.32 MHz ( period = 107.300 ns )                    ; DigitalTicketCounter:DTC|money[4]  ; DIG3C:D1|seg[4]                    ; clk        ; clk      ; None                        ; None                      ; 103.300 ns              ;
+; N/A                                     ; 9.32 MHz ( period = 107.300 ns )                    ; DigitalTicketCounter:DTC|money[4]  ; DIG3C:D1|seg[5]                    ; clk        ; clk      ; None                        ; None                      ; 103.300 ns              ;
+; N/A                                     ; 9.33 MHz ( period = 107.200 ns )                    ; DigitalTicketCounter:DTC|money[3]  ; DIG3C:D1|seg[0]                    ; clk        ; clk      ; None                        ; None                      ; 103.200 ns              ;
+; N/A                                     ; 9.33 MHz ( period = 107.200 ns )                    ; DigitalTicketCounter:DTC|money[4]  ; DIG3C:D1|seg[1]                    ; clk        ; clk      ; None                        ; None                      ; 103.200 ns              ;
+; N/A                                     ; 9.34 MHz ( period = 107.100 ns )                    ; DigitalTicketCounter:DTC|money[3]  ; DIG3C:D1|seg[6]                    ; clk        ; clk      ; None                        ; None                      ; 103.100 ns              ;
+; N/A                                     ; 9.35 MHz ( period = 107.000 ns )                    ; DigitalTicketCounter:DTC|money[3]  ; DIG3C:D1|seg[2]                    ; clk        ; clk      ; None                        ; None                      ; 103.000 ns              ;
+; N/A                                     ; 9.35 MHz ( period = 107.000 ns )                    ; DigitalTicketCounter:DTC|money[3]  ; DIG3C:D1|seg[3]                    ; clk        ; clk      ; None                        ; None                      ; 103.000 ns              ;
+; N/A                                     ; 9.35 MHz ( period = 107.000 ns )                    ; DigitalTicketCounter:DTC|money[3]  ; DIG3C:D1|seg[4]                    ; clk        ; clk      ; None                        ; None                      ; 103.000 ns              ;
+; N/A                                     ; 9.35 MHz ( period = 107.000 ns )                    ; DigitalTicketCounter:DTC|money[3]  ; DIG3C:D1|seg[5]                    ; clk        ; clk      ; None                        ; None                      ; 103.000 ns              ;
+; N/A                                     ; 9.35 MHz ( period = 106.900 ns )                    ; DigitalTicketCounter:DTC|money[3]  ; DIG3C:D1|seg[1]                    ; clk        ; clk      ; None                        ; None                      ; 102.900 ns              ;
+; N/A                                     ; 9.56 MHz ( period = 104.600 ns )                    ; DigitalTicketCounter:DTC|money[5]  ; DIG3C:D1|seg[0]                    ; clk        ; clk      ; None                        ; None                      ; 100.600 ns              ;
+; N/A                                     ; 9.57 MHz ( period = 104.500 ns )                    ; DigitalTicketCounter:DTC|money[5]  ; DIG3C:D1|seg[6]                    ; clk        ; clk      ; None                        ; None                      ; 100.500 ns              ;
+; N/A                                     ; 9.58 MHz ( period = 104.400 ns )                    ; DigitalTicketCounter:DTC|money[5]  ; DIG3C:D1|seg[2]                    ; clk        ; clk      ; None                        ; None                      ; 100.400 ns              ;
+; N/A                                     ; 9.58 MHz ( period = 104.400 ns )                    ; DigitalTicketCounter:DTC|money[5]  ; DIG3C:D1|seg[3]                    ; clk        ; clk      ; None                        ; None                      ; 100.400 ns              ;
+; N/A                                     ; 9.58 MHz ( period = 104.400 ns )                    ; DigitalTicketCounter:DTC|money[5]  ; DIG3C:D1|seg[4]                    ; clk        ; clk      ; None                        ; None                      ; 100.400 ns              ;
+; N/A                                     ; 9.58 MHz ( period = 104.400 ns )                    ; DigitalTicketCounter:DTC|money[5]  ; DIG3C:D1|seg[5]                    ; clk        ; clk      ; None                        ; None                      ; 100.400 ns              ;
+; N/A                                     ; 9.59 MHz ( period = 104.300 ns )                    ; DigitalTicketCounter:DTC|money[5]  ; DIG3C:D1|seg[1]                    ; clk        ; clk      ; None                        ; None                      ; 100.300 ns              ;
+; N/A                                     ; 10.06 MHz ( period = 99.400 ns )                    ; DigitalTicketCounter:DTC|money[6]  ; DIG3C:D1|seg[0]                    ; clk        ; clk      ; None                        ; None                      ; 95.400 ns               ;
+; N/A                                     ; 10.07 MHz ( period = 99.300 ns )                    ; DigitalTicketCounter:DTC|money[6]  ; DIG3C:D1|seg[6]                    ; clk        ; clk      ; None                        ; None                      ; 95.300 ns               ;
+; N/A                                     ; 10.08 MHz ( period = 99.200 ns )                    ; DigitalTicketCounter:DTC|money[6]  ; DIG3C:D1|seg[2]                    ; clk        ; clk      ; None                        ; None                      ; 95.200 ns               ;
+; N/A                                     ; 10.08 MHz ( period = 99.200 ns )                    ; DigitalTicketCounter:DTC|money[6]  ; DIG3C:D1|seg[3]                    ; clk        ; clk      ; None                        ; None                      ; 95.200 ns               ;
+; N/A                                     ; 10.08 MHz ( period = 99.200 ns )                    ; DigitalTicketCounter:DTC|money[6]  ; DIG3C:D1|seg[4]                    ; clk        ; clk      ; None                        ; None                      ; 95.200 ns               ;
+; N/A                                     ; 10.08 MHz ( period = 99.200 ns )                    ; DigitalTicketCounter:DTC|money[6]  ; DIG3C:D1|seg[5]                    ; clk        ; clk      ; None                        ; None                      ; 95.200 ns               ;
+; N/A                                     ; 10.09 MHz ( period = 99.100 ns )                    ; DigitalTicketCounter:DTC|money[6]  ; DIG3C:D1|seg[1]                    ; clk        ; clk      ; None                        ; None                      ; 95.100 ns               ;
+; N/A                                     ; 10.12 MHz ( period = 98.800 ns )                    ; DigitalTicketCounter:DTC|money[7]  ; DIG3C:D1|seg[0]                    ; clk        ; clk      ; None                        ; None                      ; 94.800 ns               ;
+; N/A                                     ; 10.13 MHz ( period = 98.700 ns )                    ; DigitalTicketCounter:DTC|money[7]  ; DIG3C:D1|seg[6]                    ; clk        ; clk      ; None                        ; None                      ; 94.700 ns               ;
+; N/A                                     ; 10.14 MHz ( period = 98.600 ns )                    ; DigitalTicketCounter:DTC|money[7]  ; DIG3C:D1|seg[2]                    ; clk        ; clk      ; None                        ; None                      ; 94.600 ns               ;
+; N/A                                     ; 10.14 MHz ( period = 98.600 ns )                    ; DigitalTicketCounter:DTC|money[7]  ; DIG3C:D1|seg[3]                    ; clk        ; clk      ; None                        ; None                      ; 94.600 ns               ;
+; N/A                                     ; 10.14 MHz ( period = 98.600 ns )                    ; DigitalTicketCounter:DTC|money[7]  ; DIG3C:D1|seg[4]                    ; clk        ; clk      ; None                        ; None                      ; 94.600 ns               ;
+; N/A                                     ; 10.14 MHz ( period = 98.600 ns )                    ; DigitalTicketCounter:DTC|money[7]  ; DIG3C:D1|seg[5]                    ; clk        ; clk      ; None                        ; None                      ; 94.600 ns               ;
+; N/A                                     ; 10.15 MHz ( period = 98.500 ns )                    ; DigitalTicketCounter:DTC|money[7]  ; DIG3C:D1|seg[1]                    ; clk        ; clk      ; None                        ; None                      ; 94.500 ns               ;
+; N/A                                     ; 10.35 MHz ( period = 96.600 ns )                    ; DigitalTicketCounter:DTC|money[2]  ; DIG3C:D1|seg[0]                    ; clk        ; clk      ; None                        ; None                      ; 92.600 ns               ;
+; N/A                                     ; 10.36 MHz ( period = 96.500 ns )                    ; DigitalTicketCounter:DTC|money[2]  ; DIG3C:D1|seg[6]                    ; clk        ; clk      ; None                        ; None                      ; 92.500 ns               ;
+; N/A                                     ; 10.37 MHz ( period = 96.400 ns )                    ; DigitalTicketCounter:DTC|money[2]  ; DIG3C:D1|seg[2]                    ; clk        ; clk      ; None                        ; None                      ; 92.400 ns               ;
+; N/A                                     ; 10.37 MHz ( period = 96.400 ns )                    ; DigitalTicketCounter:DTC|money[2]  ; DIG3C:D1|seg[3]                    ; clk        ; clk      ; None                        ; None                      ; 92.400 ns               ;
+; N/A                                     ; 10.37 MHz ( period = 96.400 ns )                    ; DigitalTicketCounter:DTC|money[2]  ; DIG3C:D1|seg[4]                    ; clk        ; clk      ; None                        ; None                      ; 92.400 ns               ;
+; N/A                                     ; 10.37 MHz ( period = 96.400 ns )                    ; DigitalTicketCounter:DTC|money[2]  ; DIG3C:D1|seg[5]                    ; clk        ; clk      ; None                        ; None                      ; 92.400 ns               ;
+; N/A                                     ; 10.38 MHz ( period = 96.300 ns )                    ; DigitalTicketCounter:DTC|money[2]  ; DIG3C:D1|seg[1]                    ; clk        ; clk      ; None                        ; None                      ; 92.300 ns               ;
+; N/A                                     ; 16.42 MHz ( period = 60.900 ns )                    ; DigitalTicketCounter:DTC|cost[3]   ; DIG3A:D2|seg[5]                    ; clk        ; clk      ; None                        ; None                      ; 56.900 ns               ;
+; N/A                                     ; 16.45 MHz ( period = 60.800 ns )                    ; DigitalTicketCounter:DTC|cost[3]   ; DIG3A:D2|seg[1]                    ; clk        ; clk      ; None                        ; None                      ; 56.800 ns               ;
+; N/A                                     ; 16.45 MHz ( period = 60.800 ns )                    ; DigitalTicketCounter:DTC|cost[3]   ; DIG3A:D2|seg[4]                    ; clk        ; clk      ; None                        ; None                      ; 56.800 ns               ;
+; N/A                                     ; 16.47 MHz ( period = 60.700 ns )                    ; DigitalTicketCounter:DTC|cost[3]   ; DIG3A:D2|seg[6]                    ; clk        ; clk      ; None                        ; None                      ; 56.700 ns               ;
+; N/A                                     ; 16.53 MHz ( period = 60.500 ns )                    ; DigitalTicketCounter:DTC|cost[3]   ; DIG3A:D2|seg[0]                    ; clk        ; clk      ; None                        ; None                      ; 56.500 ns               ;
+; N/A                                     ; 16.92 MHz ( period = 59.100 ns )                    ; DigitalTicketCounter:DTC|cost[4]   ; DIG3A:D2|seg[5]                    ; clk        ; clk      ; None                        ; None                      ; 55.100 ns               ;
+; N/A                                     ; 16.95 MHz ( period = 59.000 ns )                    ; DigitalTicketCounter:DTC|cost[4]   ; DIG3A:D2|seg[1]                    ; clk        ; clk      ; None                        ; None                      ; 55.000 ns               ;
+; N/A                                     ; 16.95 MHz ( period = 59.000 ns )                    ; DigitalTicketCounter:DTC|cost[4]   ; DIG3A:D2|seg[4]                    ; clk        ; clk      ; None                        ; None                      ; 55.000 ns               ;
+; N/A                                     ; 16.98 MHz ( period = 58.900 ns )                    ; DigitalTicketCounter:DTC|cost[4]   ; DIG3A:D2|seg[6]                    ; clk        ; clk      ; None                        ; None                      ; 54.900 ns               ;
+; N/A                                     ; 17.04 MHz ( period = 58.700 ns )                    ; DigitalTicketCounter:DTC|cost[4]   ; DIG3A:D2|seg[0]                    ; clk        ; clk      ; None                        ; None                      ; 54.700 ns               ;
+; N/A                                     ; 17.09 MHz ( period = 58.500 ns )                    ; DigitalTicketCounter:DTC|cost[3]   ; DIG3A:D2|seg[2]                    ; clk        ; clk      ; None                        ; None                      ; 54.500 ns               ;
+; N/A                                     ; 17.12 MHz ( period = 58.400 ns )                    ; DigitalTicketCounter:DTC|cost[3]   ; DIG3A:D2|seg[3]                    ; clk        ; clk      ; None                        ; None                      ; 54.400 ns               ;
+; N/A                                     ; 17.64 MHz ( period = 56.700 ns )                    ; DigitalTicketCounter:DTC|cost[4]   ; DIG3A:D2|seg[2]                    ; clk        ; clk      ; None                        ; None                      ; 52.700 ns               ;
+; N/A                                     ; 17.67 MHz ( period = 56.600 ns )                    ; DigitalTicketCounter:DTC|cost[4]   ; DIG3A:D2|seg[3]                    ; clk        ; clk      ; None                        ; None                      ; 52.600 ns               ;
+; N/A                                     ; 17.79 MHz ( period = 56.200 ns )                    ; DigitalTicketCounter:DTC|cost[5]   ; DIG3A:D2|seg[5]                    ; clk        ; clk      ; None                        ; None                      ; 52.200 ns               ;
+; N/A                                     ; 17.83 MHz ( period = 56.100 ns )                    ; DigitalTicketCounter:DTC|cost[5]   ; DIG3A:D2|seg[1]                    ; clk        ; clk      ; None                        ; None                      ; 52.100 ns               ;
+; N/A                                     ; 17.83 MHz ( period = 56.100 ns )                    ; DigitalTicketCounter:DTC|cost[5]   ; DIG3A:D2|seg[4]                    ; clk        ; clk      ; None                        ; None                      ; 52.100 ns               ;
+; N/A                                     ; 17.86 MHz ( period = 56.000 ns )                    ; DigitalTicketCounter:DTC|cost[5]   ; DIG3A:D2|seg[6]                    ; clk        ; clk      ; None                        ; None                      ; 52.000 ns               ;
+; N/A                                     ; 17.92 MHz ( period = 55.800 ns )                    ; DigitalTicketCounter:DTC|cost[5]   ; DIG3A:D2|seg[0]                    ; clk        ; clk      ; None                        ; None                      ; 51.800 ns               ;
+; N/A                                     ; 18.18 MHz ( period = 55.000 ns )                    ; Debounce:d7|D_FF:d1|Q              ; DigitalTicketCounter:DTC|cost[5]   ; clk        ; clk      ; None                        ; None                      ; 39.100 ns               ;
+; N/A                                     ; 18.18 MHz ( period = 55.000 ns )                    ; Debounce:d7|D_FF:d1|Q              ; DigitalTicketCounter:DTC|cost[4]   ; clk        ; clk      ; None                        ; None                      ; 39.100 ns               ;
+; N/A                                     ; 18.25 MHz ( period = 54.800 ns )                    ; Debounce:d3|D_FF:d1|Q              ; DigitalTicketCounter:DTC|cost[5]   ; clk        ; clk      ; None                        ; None                      ; 38.900 ns               ;
+; N/A                                     ; 18.25 MHz ( period = 54.800 ns )                    ; Debounce:d3|D_FF:d1|Q              ; DigitalTicketCounter:DTC|cost[4]   ; clk        ; clk      ; None                        ; None                      ; 38.900 ns               ;
+; N/A                                     ; 18.28 MHz ( period = 54.700 ns )                    ; Debounce:d7|D_FF:d2|Q              ; DigitalTicketCounter:DTC|cost[5]   ; clk        ; clk      ; None                        ; None                      ; 38.800 ns               ;
+; N/A                                     ; 18.28 MHz ( period = 54.700 ns )                    ; Debounce:d7|D_FF:d2|Q              ; DigitalTicketCounter:DTC|cost[4]   ; clk        ; clk      ; None                        ; None                      ; 38.800 ns               ;
+; N/A                                     ; 18.35 MHz ( period = 54.500 ns )                    ; Debounce:d3|D_FF:d2|Q              ; DigitalTicketCounter:DTC|cost[5]   ; clk        ; clk      ; None                        ; None                      ; 38.600 ns               ;
+; N/A                                     ; 18.35 MHz ( period = 54.500 ns )                    ; Debounce:d3|D_FF:d2|Q              ; DigitalTicketCounter:DTC|cost[4]   ; clk        ; clk      ; None                        ; None                      ; 38.600 ns               ;
+; N/A                                     ; 18.59 MHz ( period = 53.800 ns )                    ; DigitalTicketCounter:DTC|cost[5]   ; DIG3A:D2|seg[2]                    ; clk        ; clk      ; None                        ; None                      ; 49.800 ns               ;
+; N/A                                     ; 18.62 MHz ( period = 53.700 ns )                    ; DigitalTicketCounter:DTC|cost[5]   ; DIG3A:D2|seg[3]                    ; clk        ; clk      ; None                        ; None                      ; 49.700 ns               ;
+; N/A                                     ; 18.62 MHz ( period = 53.700 ns )                    ; DigitalTicketCounter:DTC|quant[1]  ; DigitalTicketCounter:DTC|quant[1]  ; clk        ; clk      ; None                        ; None                      ; 49.700 ns               ;
+; N/A                                     ; 18.62 MHz ( period = 53.700 ns )                    ; DigitalTicketCounter:DTC|quant[2]  ; DigitalTicketCounter:DTC|quant[1]  ; clk        ; clk      ; None                        ; None                      ; 49.700 ns               ;
+; N/A                                     ; 18.83 MHz ( period = 53.100 ns )                    ; DigitalTicketCounter:DTC|cost[2]   ; DIG3A:D2|seg[5]                    ; clk        ; clk      ; None                        ; None                      ; 49.100 ns               ;
+; N/A                                     ; 18.83 MHz ( period = 53.100 ns )                    ; DigitalTicketCounter:DTC|quant[1]  ; DigitalTicketCounter:DTC|money[3]  ; clk        ; clk      ; None                        ; None                      ; 49.100 ns               ;
+; N/A                                     ; 18.83 MHz ( period = 53.100 ns )                    ; DigitalTicketCounter:DTC|quant[2]  ; DigitalTicketCounter:DTC|money[3]  ; clk        ; clk      ; None                        ; None                      ; 49.100 ns               ;
+; N/A                                     ; 18.87 MHz ( period = 53.000 ns )                    ; DigitalTicketCounter:DTC|cost[2]   ; DIG3A:D2|seg[1]                    ; clk        ; clk      ; None                        ; None                      ; 49.000 ns               ;
+; N/A                                     ; 18.87 MHz ( period = 53.000 ns )                    ; DigitalTicketCounter:DTC|cost[2]   ; DIG3A:D2|seg[4]                    ; clk        ; clk      ; None                        ; None                      ; 49.000 ns               ;
+; N/A                                     ; 18.90 MHz ( period = 52.900 ns )                    ; DigitalTicketCounter:DTC|cost[2]   ; DIG3A:D2|seg[6]                    ; clk        ; clk      ; None                        ; None                      ; 48.900 ns               ;
+; N/A                                     ; 18.90 MHz ( period = 52.900 ns )                    ; DigitalTicketCounter:DTC|quant[0]  ; DigitalTicketCounter:DTC|quant[1]  ; clk        ; clk      ; None                        ; None                      ; 48.900 ns               ;
+; N/A                                     ; 18.98 MHz ( period = 52.700 ns )                    ; DigitalTicketCounter:DTC|cost[2]   ; DIG3A:D2|seg[0]                    ; clk        ; clk      ; None                        ; None                      ; 48.700 ns               ;
+; N/A                                     ; 19.08 MHz ( period = 52.400 ns )                    ; DigitalTicketCounter:DTC|cost[1]   ; DigitalTicketCounter:DTC|quant[1]  ; clk        ; clk      ; None                        ; None                      ; 48.400 ns               ;
+; N/A                                     ; 19.08 MHz ( period = 52.400 ns )                    ; DigitalTicketCounter:DTC|cost[2]   ; DigitalTicketCounter:DTC|quant[1]  ; clk        ; clk      ; None                        ; None                      ; 48.400 ns               ;
+; N/A                                     ; 19.08 MHz ( period = 52.400 ns )                    ; DigitalTicketCounter:DTC|cost[0]   ; DigitalTicketCounter:DTC|quant[1]  ; clk        ; clk      ; None                        ; None                      ; 48.400 ns               ;
+; N/A                                     ; 19.12 MHz ( period = 52.300 ns )                    ; DigitalTicketCounter:DTC|quant[0]  ; DigitalTicketCounter:DTC|money[3]  ; clk        ; clk      ; None                        ; None                      ; 48.300 ns               ;
+; N/A                                     ; 19.31 MHz ( period = 51.800 ns )                    ; Debounce:d2|D_FF:d1|Q              ; DigitalTicketCounter:DTC|cost[5]   ; clk        ; clk      ; None                        ; None                      ; 35.900 ns               ;
+; N/A                                     ; 19.31 MHz ( period = 51.800 ns )                    ; Debounce:d2|D_FF:d1|Q              ; DigitalTicketCounter:DTC|cost[4]   ; clk        ; clk      ; None                        ; None                      ; 35.900 ns               ;
+; N/A                                     ; 19.34 MHz ( period = 51.700 ns )                    ; DigitalTicketCounter:DTC|cost[1]   ; DigitalTicketCounter:DTC|money[3]  ; clk        ; clk      ; None                        ; None                      ; 47.700 ns               ;
+; N/A                                     ; 19.34 MHz ( period = 51.700 ns )                    ; DigitalTicketCounter:DTC|cost[2]   ; DigitalTicketCounter:DTC|money[3]  ; clk        ; clk      ; None                        ; None                      ; 47.700 ns               ;
+; N/A                                     ; 19.34 MHz ( period = 51.700 ns )                    ; DigitalTicketCounter:DTC|cost[0]   ; DigitalTicketCounter:DTC|money[3]  ; clk        ; clk      ; None                        ; None                      ; 47.700 ns               ;
+; N/A                                     ; 19.42 MHz ( period = 51.500 ns )                    ; Debounce:d2|D_FF:d2|Q              ; DigitalTicketCounter:DTC|cost[5]   ; clk        ; clk      ; None                        ; None                      ; 35.600 ns               ;
+; N/A                                     ; 19.42 MHz ( period = 51.500 ns )                    ; Debounce:d2|D_FF:d2|Q              ; DigitalTicketCounter:DTC|cost[4]   ; clk        ; clk      ; None                        ; None                      ; 35.600 ns               ;
+; N/A                                     ; 19.57 MHz ( period = 51.100 ns )                    ; DigitalTicketCounter:DTC|quant[1]  ; DigitalTicketCounter:DTC|quant[0]  ; clk        ; clk      ; None                        ; None                      ; 47.100 ns               ;
+; N/A                                     ; 19.57 MHz ( period = 51.100 ns )                    ; DigitalTicketCounter:DTC|quant[2]  ; DigitalTicketCounter:DTC|quant[0]  ; clk        ; clk      ; None                        ; None                      ; 47.100 ns               ;
+; N/A                                     ; 19.57 MHz ( period = 51.100 ns )                    ; DigitalTicketCounter:DTC|stock0[0] ; DigitalTicketCounter:DTC|quant[1]  ; clk        ; clk      ; None                        ; None                      ; 47.100 ns               ;
+; N/A                                     ; 19.69 MHz ( period = 50.800 ns )                    ; DigitalTicketCounter:DTC|quant[1]  ; DigitalTicketCounter:DTC|quant[2]  ; clk        ; clk      ; None                        ; None                      ; 46.800 ns               ;
+; N/A                                     ; 19.69 MHz ( period = 50.800 ns )                    ; DigitalTicketCounter:DTC|quant[2]  ; DigitalTicketCounter:DTC|quant[2]  ; clk        ; clk      ; None                        ; None                      ; 46.800 ns               ;
+; N/A                                     ; 19.72 MHz ( period = 50.700 ns )                    ; DigitalTicketCounter:DTC|cost[2]   ; DIG3A:D2|seg[2]                    ; clk        ; clk      ; None                        ; None                      ; 46.700 ns               ;
+; N/A                                     ; 19.76 MHz ( period = 50.600 ns )                    ; DigitalTicketCounter:DTC|cost[2]   ; DIG3A:D2|seg[3]                    ; clk        ; clk      ; None                        ; None                      ; 46.600 ns               ;
+; N/A                                     ; 19.76 MHz ( period = 50.600 ns )                    ; Debounce:d7|D_FF:d1|Q              ; DigitalTicketCounter:DTC|cost[1]   ; clk        ; clk      ; None                        ; None                      ; 34.700 ns               ;
+; N/A                                     ; 19.76 MHz ( period = 50.600 ns )                    ; Debounce:d7|D_FF:d1|Q              ; DigitalTicketCounter:DTC|cost[2]   ; clk        ; clk      ; None                        ; None                      ; 34.700 ns               ;
+; N/A                                     ; 19.76 MHz ( period = 50.600 ns )                    ; Debounce:d7|D_FF:d1|Q              ; DigitalTicketCounter:DTC|cost[3]   ; clk        ; clk      ; None                        ; None                      ; 34.700 ns               ;
+; N/A                                     ; 19.80 MHz ( period = 50.500 ns )                    ; DigitalTicketCounter:DTC|stock0[0] ; DigitalTicketCounter:DTC|money[3]  ; clk        ; clk      ; None                        ; None                      ; 46.500 ns               ;
+; N/A                                     ; 19.84 MHz ( period = 50.400 ns )                    ; DigitalTicketCounter:DTC|money[1]  ; DigitalTicketCounter:DTC|quant[1]  ; clk        ; clk      ; None                        ; None                      ; 46.400 ns               ;
+; N/A                                     ; 19.84 MHz ( period = 50.400 ns )                    ; DigitalTicketCounter:DTC|stock0[2] ; DigitalTicketCounter:DTC|quant[1]  ; clk        ; clk      ; None                        ; None                      ; 46.400 ns               ;
+; N/A                                     ; 19.84 MHz ( period = 50.400 ns )                    ; DigitalTicketCounter:DTC|stock1[0] ; DigitalTicketCounter:DTC|quant[1]  ; clk        ; clk      ; None                        ; None                      ; 46.400 ns               ;
+; N/A                                     ; 19.84 MHz ( period = 50.400 ns )                    ; Debounce:d3|D_FF:d1|Q              ; DigitalTicketCounter:DTC|cost[1]   ; clk        ; clk      ; None                        ; None                      ; 34.500 ns               ;
+; N/A                                     ; 19.84 MHz ( period = 50.400 ns )                    ; Debounce:d3|D_FF:d1|Q              ; DigitalTicketCounter:DTC|cost[2]   ; clk        ; clk      ; None                        ; None                      ; 34.500 ns               ;
+; N/A                                     ; 19.84 MHz ( period = 50.400 ns )                    ; Debounce:d3|D_FF:d1|Q              ; DigitalTicketCounter:DTC|cost[3]   ; clk        ; clk      ; None                        ; None                      ; 34.500 ns               ;
+; N/A                                     ; 19.88 MHz ( period = 50.300 ns )                    ; DigitalTicketCounter:DTC|quant[0]  ; DigitalTicketCounter:DTC|quant[0]  ; clk        ; clk      ; None                        ; None                      ; 46.300 ns               ;
+; N/A                                     ; 19.88 MHz ( period = 50.300 ns )                    ; DigitalTicketCounter:DTC|stock1[2] ; DigitalTicketCounter:DTC|quant[1]  ; clk        ; clk      ; None                        ; None                      ; 46.300 ns               ;
+; N/A                                     ; 19.88 MHz ( period = 50.300 ns )                    ; Debounce:d7|D_FF:d2|Q              ; DigitalTicketCounter:DTC|cost[1]   ; clk        ; clk      ; None                        ; None                      ; 34.400 ns               ;
+; N/A                                     ; 19.88 MHz ( period = 50.300 ns )                    ; Debounce:d7|D_FF:d2|Q              ; DigitalTicketCounter:DTC|cost[2]   ; clk        ; clk      ; None                        ; None                      ; 34.400 ns               ;
+; N/A                                     ; 19.88 MHz ( period = 50.300 ns )                    ; Debounce:d7|D_FF:d2|Q              ; DigitalTicketCounter:DTC|cost[3]   ; clk        ; clk      ; None                        ; None                      ; 34.400 ns               ;
+; N/A                                     ; 19.88 MHz ( period = 50.300 ns )                    ; Debounce:d7|D_FF:d1|Q              ; DigitalTicketCounter:DTC|cost[0]   ; clk        ; clk      ; None                        ; None                      ; 34.400 ns               ;
+; N/A                                     ; 19.96 MHz ( period = 50.100 ns )                    ; DigitalTicketCounter:DTC|quant[1]  ; DigitalTicketCounter:DTC|money[2]  ; clk        ; clk      ; None                        ; None                      ; 46.100 ns               ;
+; N/A                                     ; 19.96 MHz ( period = 50.100 ns )                    ; DigitalTicketCounter:DTC|quant[2]  ; DigitalTicketCounter:DTC|money[2]  ; clk        ; clk      ; None                        ; None                      ; 46.100 ns               ;
+; N/A                                     ; 19.96 MHz ( period = 50.100 ns )                    ; DigitalTicketCounter:DTC|stock0[1] ; DigitalTicketCounter:DTC|quant[1]  ; clk        ; clk      ; None                        ; None                      ; 46.100 ns               ;
+; N/A                                     ; 19.96 MHz ( period = 50.100 ns )                    ; Debounce:d3|D_FF:d2|Q              ; DigitalTicketCounter:DTC|cost[1]   ; clk        ; clk      ; None                        ; None                      ; 34.200 ns               ;
+; N/A                                     ; 19.96 MHz ( period = 50.100 ns )                    ; Debounce:d3|D_FF:d2|Q              ; DigitalTicketCounter:DTC|cost[2]   ; clk        ; clk      ; None                        ; None                      ; 34.200 ns               ;
+; N/A                                     ; 19.96 MHz ( period = 50.100 ns )                    ; Debounce:d3|D_FF:d2|Q              ; DigitalTicketCounter:DTC|cost[3]   ; clk        ; clk      ; None                        ; None                      ; 34.200 ns               ;
+; N/A                                     ; 19.96 MHz ( period = 50.100 ns )                    ; Debounce:d3|D_FF:d1|Q              ; DigitalTicketCounter:DTC|cost[0]   ; clk        ; clk      ; None                        ; None                      ; 34.200 ns               ;
+; N/A                                     ; 19.96 MHz ( period = 50.100 ns )                    ; Debounce:d7|D_FF:d1|Q              ; DigitalTicketCounter:DTC|price2[2] ; clk        ; clk      ; None                        ; None                      ; 34.200 ns               ;
+; N/A                                     ; 19.96 MHz ( period = 50.100 ns )                    ; Debounce:d7|D_FF:d1|Q              ; DigitalTicketCounter:DTC|price2[0] ; clk        ; clk      ; None                        ; None                      ; 34.200 ns               ;
+; N/A                                     ; 20.00 MHz ( period = 50.000 ns )                    ; DigitalTicketCounter:DTC|quant[0]  ; DigitalTicketCounter:DTC|quant[2]  ; clk        ; clk      ; None                        ; None                      ; 46.000 ns               ;
+; N/A                                     ; 20.00 MHz ( period = 50.000 ns )                    ; Debounce:d7|D_FF:d2|Q              ; DigitalTicketCounter:DTC|cost[0]   ; clk        ; clk      ; None                        ; None                      ; 34.100 ns               ;
+; N/A                                     ; 20.00 MHz ( period = 50.000 ns )                    ; Debounce:d7|D_FF:d1|Q              ; DigitalTicketCounter:DTC|price0[0] ; clk        ; clk      ; None                        ; None                      ; 34.100 ns               ;
+; N/A                                     ; 20.00 MHz ( period = 50.000 ns )                    ; Debounce:d7|D_FF:d1|Q              ; DigitalTicketCounter:DTC|price0[1] ; clk        ; clk      ; None                        ; None                      ; 34.100 ns               ;
+; N/A                                     ; 20.00 MHz ( period = 50.000 ns )                    ; Debounce:d7|D_FF:d1|Q              ; DigitalTicketCounter:DTC|price0[2] ; clk        ; clk      ; None                        ; None                      ; 34.100 ns               ;
+; N/A                                     ; 20.04 MHz ( period = 49.900 ns )                    ; DigitalTicketCounter:DTC|quant[1]  ; DigitalTicketCounter:DTC|cost[5]   ; clk        ; clk      ; None                        ; None                      ; 45.900 ns               ;
+; N/A                                     ; 20.04 MHz ( period = 49.900 ns )                    ; DigitalTicketCounter:DTC|quant[2]  ; DigitalTicketCounter:DTC|cost[5]   ; clk        ; clk      ; None                        ; None                      ; 45.900 ns               ;
+; N/A                                     ; 20.04 MHz ( period = 49.900 ns )                    ; DigitalTicketCounter:DTC|quant[1]  ; DigitalTicketCounter:DTC|cost[4]   ; clk        ; clk      ; None                        ; None                      ; 45.900 ns               ;
+; N/A                                     ; 20.04 MHz ( period = 49.900 ns )                    ; DigitalTicketCounter:DTC|quant[2]  ; DigitalTicketCounter:DTC|cost[4]   ; clk        ; clk      ; None                        ; None                      ; 45.900 ns               ;
+; N/A                                     ; 20.04 MHz ( period = 49.900 ns )                    ; DigitalTicketCounter:DTC|money[2]  ; DigitalTicketCounter:DTC|quant[1]  ; clk        ; clk      ; None                        ; None                      ; 45.900 ns               ;
+; N/A                                     ; 20.04 MHz ( period = 49.900 ns )                    ; DigitalTicketCounter:DTC|stock1[1] ; DigitalTicketCounter:DTC|quant[1]  ; clk        ; clk      ; None                        ; None                      ; 45.900 ns               ;
+; N/A                                     ; 20.04 MHz ( period = 49.900 ns )                    ; Debounce:d3|D_FF:d1|Q              ; DigitalTicketCounter:DTC|price2[2] ; clk        ; clk      ; None                        ; None                      ; 34.000 ns               ;
+; N/A                                     ; 20.04 MHz ( period = 49.900 ns )                    ; Debounce:d3|D_FF:d1|Q              ; DigitalTicketCounter:DTC|price2[0] ; clk        ; clk      ; None                        ; None                      ; 34.000 ns               ;
+; N/A                                     ; 20.08 MHz ( period = 49.800 ns )                    ; DigitalTicketCounter:DTC|stock0[2] ; DigitalTicketCounter:DTC|money[3]  ; clk        ; clk      ; None                        ; None                      ; 45.800 ns               ;
+; N/A                                     ; 20.08 MHz ( period = 49.800 ns )                    ; DigitalTicketCounter:DTC|stock1[0] ; DigitalTicketCounter:DTC|money[3]  ; clk        ; clk      ; None                        ; None                      ; 45.800 ns               ;
+; N/A                                     ; 20.08 MHz ( period = 49.800 ns )                    ; DigitalTicketCounter:DTC|cost[1]   ; DigitalTicketCounter:DTC|quant[0]  ; clk        ; clk      ; None                        ; None                      ; 45.800 ns               ;
+; N/A                                     ; 20.08 MHz ( period = 49.800 ns )                    ; DigitalTicketCounter:DTC|cost[2]   ; DigitalTicketCounter:DTC|quant[0]  ; clk        ; clk      ; None                        ; None                      ; 45.800 ns               ;
+; N/A                                     ; 20.08 MHz ( period = 49.800 ns )                    ; DigitalTicketCounter:DTC|cost[0]   ; DigitalTicketCounter:DTC|quant[0]  ; clk        ; clk      ; None                        ; None                      ; 45.800 ns               ;
+; N/A                                     ; 20.08 MHz ( period = 49.800 ns )                    ; Debounce:d3|D_FF:d2|Q              ; DigitalTicketCounter:DTC|cost[0]   ; clk        ; clk      ; None                        ; None                      ; 33.900 ns               ;
+; N/A                                     ; 20.08 MHz ( period = 49.800 ns )                    ; Debounce:d3|D_FF:d1|Q              ; DigitalTicketCounter:DTC|price0[0] ; clk        ; clk      ; None                        ; None                      ; 33.900 ns               ;
+; N/A                                     ; 20.08 MHz ( period = 49.800 ns )                    ; Debounce:d3|D_FF:d1|Q              ; DigitalTicketCounter:DTC|price0[1] ; clk        ; clk      ; None                        ; None                      ; 33.900 ns               ;
+; N/A                                     ; 20.08 MHz ( period = 49.800 ns )                    ; Debounce:d3|D_FF:d1|Q              ; DigitalTicketCounter:DTC|price0[2] ; clk        ; clk      ; None                        ; None                      ; 33.900 ns               ;
+; N/A                                     ; 20.08 MHz ( period = 49.800 ns )                    ; Debounce:d7|D_FF:d2|Q              ; DigitalTicketCounter:DTC|price2[2] ; clk        ; clk      ; None                        ; None                      ; 33.900 ns               ;
+; N/A                                     ; 20.08 MHz ( period = 49.800 ns )                    ; Debounce:d7|D_FF:d2|Q              ; DigitalTicketCounter:DTC|price2[0] ; clk        ; clk      ; None                        ; None                      ; 33.900 ns               ;
+; N/A                                     ; 20.12 MHz ( period = 49.700 ns )                    ; DigitalTicketCounter:DTC|money[1]  ; DigitalTicketCounter:DTC|money[3]  ; clk        ; clk      ; None                        ; None                      ; 45.700 ns               ;
+; N/A                                     ; 20.12 MHz ( period = 49.700 ns )                    ; DigitalTicketCounter:DTC|stock1[2] ; DigitalTicketCounter:DTC|money[3]  ; clk        ; clk      ; None                        ; None                      ; 45.700 ns               ;
+; N/A                                     ; 20.12 MHz ( period = 49.700 ns )                    ; Debounce:d7|D_FF:d2|Q              ; DigitalTicketCounter:DTC|price0[0] ; clk        ; clk      ; None                        ; None                      ; 33.800 ns               ;
+; N/A                                     ; 20.12 MHz ( period = 49.700 ns )                    ; Debounce:d7|D_FF:d2|Q              ; DigitalTicketCounter:DTC|price0[1] ; clk        ; clk      ; None                        ; None                      ; 33.800 ns               ;
+; N/A                                     ; 20.12 MHz ( period = 49.700 ns )                    ; Debounce:d7|D_FF:d2|Q              ; DigitalTicketCounter:DTC|price0[2] ; clk        ; clk      ; None                        ; None                      ; 33.800 ns               ;
+; N/A                                     ; 20.16 MHz ( period = 49.600 ns )                    ; DigitalTicketCounter:DTC|money[0]  ; DigitalTicketCounter:DTC|quant[1]  ; clk        ; clk      ; None                        ; None                      ; 45.600 ns               ;
+; N/A                                     ; 20.16 MHz ( period = 49.600 ns )                    ; Debounce:d3|D_FF:d2|Q              ; DigitalTicketCounter:DTC|price2[2] ; clk        ; clk      ; None                        ; None                      ; 33.700 ns               ;
+; N/A                                     ; 20.16 MHz ( period = 49.600 ns )                    ; Debounce:d3|D_FF:d2|Q              ; DigitalTicketCounter:DTC|price2[0] ; clk        ; clk      ; None                        ; None                      ; 33.700 ns               ;
+; N/A                                     ; 20.20 MHz ( period = 49.500 ns )                    ; DigitalTicketCounter:DTC|stock0[1] ; DigitalTicketCounter:DTC|money[3]  ; clk        ; clk      ; None                        ; None                      ; 45.500 ns               ;
+; N/A                                     ; 20.20 MHz ( period = 49.500 ns )                    ; DigitalTicketCounter:DTC|cost[4]   ; DigitalTicketCounter:DTC|quant[1]  ; clk        ; clk      ; None                        ; None                      ; 45.500 ns               ;
+; N/A                                     ; 20.20 MHz ( period = 49.500 ns )                    ; DigitalTicketCounter:DTC|cost[1]   ; DigitalTicketCounter:DTC|quant[2]  ; clk        ; clk      ; None                        ; None                      ; 45.500 ns               ;
+; N/A                                     ; 20.20 MHz ( period = 49.500 ns )                    ; DigitalTicketCounter:DTC|cost[2]   ; DigitalTicketCounter:DTC|quant[2]  ; clk        ; clk      ; None                        ; None                      ; 45.500 ns               ;
+; N/A                                     ; 20.20 MHz ( period = 49.500 ns )                    ; DigitalTicketCounter:DTC|cost[0]   ; DigitalTicketCounter:DTC|quant[2]  ; clk        ; clk      ; None                        ; None                      ; 45.500 ns               ;
+; N/A                                     ; 20.20 MHz ( period = 49.500 ns )                    ; Debounce:d3|D_FF:d2|Q              ; DigitalTicketCounter:DTC|price0[0] ; clk        ; clk      ; None                        ; None                      ; 33.600 ns               ;
+; N/A                                     ; 20.20 MHz ( period = 49.500 ns )                    ; Debounce:d3|D_FF:d2|Q              ; DigitalTicketCounter:DTC|price0[1] ; clk        ; clk      ; None                        ; None                      ; 33.600 ns               ;
+; N/A                                     ; 20.20 MHz ( period = 49.500 ns )                    ; Debounce:d3|D_FF:d2|Q              ; DigitalTicketCounter:DTC|price0[2] ; clk        ; clk      ; None                        ; None                      ; 33.600 ns               ;
+; N/A                                     ; 20.24 MHz ( period = 49.400 ns )                    ; Debounce:d7|D_FF:d1|Q              ; DigitalTicketCounter:DTC|price1[2] ; clk        ; clk      ; None                        ; None                      ; 33.500 ns               ;
+; N/A                                     ; 20.24 MHz ( period = 49.400 ns )                    ; Debounce:d7|D_FF:d1|Q              ; DigitalTicketCounter:DTC|price1[1] ; clk        ; clk      ; None                        ; None                      ; 33.500 ns               ;
+; N/A                                     ; 20.28 MHz ( period = 49.300 ns )                    ; DigitalTicketCounter:DTC|quant[0]  ; DigitalTicketCounter:DTC|money[2]  ; clk        ; clk      ; None                        ; None                      ; 45.300 ns               ;
+; N/A                                     ; 20.28 MHz ( period = 49.300 ns )                    ; DigitalTicketCounter:DTC|stock1[1] ; DigitalTicketCounter:DTC|money[3]  ; clk        ; clk      ; None                        ; None                      ; 45.300 ns               ;
+; N/A                                     ; 20.28 MHz ( period = 49.300 ns )                    ; Debounce:d4|D_FF:d1|Q              ; DigitalTicketCounter:DTC|cost[5]   ; clk        ; clk      ; None                        ; None                      ; 33.400 ns               ;
+; N/A                                     ; 20.28 MHz ( period = 49.300 ns )                    ; Debounce:d4|D_FF:d1|Q              ; DigitalTicketCounter:DTC|cost[4]   ; clk        ; clk      ; None                        ; None                      ; 33.400 ns               ;
+; N/A                                     ; 20.28 MHz ( period = 49.300 ns )                    ; DigitalTicketCounter:DTC|cost[5]   ; DigitalTicketCounter:DTC|quant[1]  ; clk        ; clk      ; None                        ; None                      ; 45.300 ns               ;
+; N/A                                     ; 20.33 MHz ( period = 49.200 ns )                    ; DigitalTicketCounter:DTC|money[2]  ; DigitalTicketCounter:DTC|money[3]  ; clk        ; clk      ; None                        ; None                      ; 45.200 ns               ;
+; N/A                                     ; 20.33 MHz ( period = 49.200 ns )                    ; Debounce:d3|D_FF:d1|Q              ; DigitalTicketCounter:DTC|price1[2] ; clk        ; clk      ; None                        ; None                      ; 33.300 ns               ;
+; N/A                                     ; 20.33 MHz ( period = 49.200 ns )                    ; Debounce:d3|D_FF:d1|Q              ; DigitalTicketCounter:DTC|price1[1] ; clk        ; clk      ; None                        ; None                      ; 33.300 ns               ;
+; N/A                                     ; 20.37 MHz ( period = 49.100 ns )                    ; DigitalTicketCounter:DTC|quant[0]  ; DigitalTicketCounter:DTC|cost[5]   ; clk        ; clk      ; None                        ; None                      ; 45.100 ns               ;
+; N/A                                     ; 20.37 MHz ( period = 49.100 ns )                    ; DigitalTicketCounter:DTC|quant[0]  ; DigitalTicketCounter:DTC|cost[4]   ; clk        ; clk      ; None                        ; None                      ; 45.100 ns               ;
+; N/A                                     ; 20.37 MHz ( period = 49.100 ns )                    ; Debounce:d7|D_FF:d2|Q              ; DigitalTicketCounter:DTC|price1[2] ; clk        ; clk      ; None                        ; None                      ; 33.200 ns               ;
+; N/A                                     ; 20.37 MHz ( period = 49.100 ns )                    ; Debounce:d7|D_FF:d2|Q              ; DigitalTicketCounter:DTC|price1[1] ; clk        ; clk      ; None                        ; None                      ; 33.200 ns               ;
+; N/A                                     ; 20.41 MHz ( period = 49.000 ns )                    ; Debounce:d4|D_FF:d2|Q              ; DigitalTicketCounter:DTC|cost[5]   ; clk        ; clk      ; None                        ; None                      ; 33.100 ns               ;
+; N/A                                     ; 20.41 MHz ( period = 49.000 ns )                    ; Debounce:d4|D_FF:d2|Q              ; DigitalTicketCounter:DTC|cost[4]   ; clk        ; clk      ; None                        ; None                      ; 33.100 ns               ;
+; N/A                                     ; 20.41 MHz ( period = 49.000 ns )                    ; Debounce:d7|D_FF:d1|Q              ; DigitalTicketCounter:DTC|price1[0] ; clk        ; clk      ; None                        ; None                      ; 33.100 ns               ;
+; N/A                                     ; 20.45 MHz ( period = 48.900 ns )                    ; DigitalTicketCounter:DTC|money[0]  ; DigitalTicketCounter:DTC|money[3]  ; clk        ; clk      ; None                        ; None                      ; 44.900 ns               ;
+; N/A                                     ; 20.45 MHz ( period = 48.900 ns )                    ; Debounce:d5|D_FF:d1|Q              ; DigitalTicketCounter:DTC|money[3]  ; clk        ; clk      ; None                        ; None                      ; 33.000 ns               ;
+; N/A                                     ; 20.45 MHz ( period = 48.900 ns )                    ; Debounce:d1|D_FF:d1|Q              ; DigitalTicketCounter:DTC|cost[5]   ; clk        ; clk      ; None                        ; None                      ; 33.000 ns               ;
+; N/A                                     ; 20.45 MHz ( period = 48.900 ns )                    ; Debounce:d1|D_FF:d1|Q              ; DigitalTicketCounter:DTC|cost[4]   ; clk        ; clk      ; None                        ; None                      ; 33.000 ns               ;
+; N/A                                     ; 20.45 MHz ( period = 48.900 ns )                    ; Debounce:d3|D_FF:d2|Q              ; DigitalTicketCounter:DTC|price1[2] ; clk        ; clk      ; None                        ; None                      ; 33.000 ns               ;
+; N/A                                     ; 20.45 MHz ( period = 48.900 ns )                    ; Debounce:d3|D_FF:d2|Q              ; DigitalTicketCounter:DTC|price1[1] ; clk        ; clk      ; None                        ; None                      ; 33.000 ns               ;
+; N/A                                     ; 20.49 MHz ( period = 48.800 ns )                    ; DigitalTicketCounter:DTC|cost[4]   ; DigitalTicketCounter:DTC|money[3]  ; clk        ; clk      ; None                        ; None                      ; 44.800 ns               ;
+; N/A                                     ; 20.49 MHz ( period = 48.800 ns )                    ; Debounce:d3|D_FF:d1|Q              ; DigitalTicketCounter:DTC|price1[0] ; clk        ; clk      ; None                        ; None                      ; 32.900 ns               ;
+; N/A                                     ; 20.53 MHz ( period = 48.700 ns )                    ; DigitalTicketCounter:DTC|cost[1]   ; DigitalTicketCounter:DTC|money[2]  ; clk        ; clk      ; None                        ; None                      ; 44.700 ns               ;
+; N/A                                     ; 20.53 MHz ( period = 48.700 ns )                    ; DigitalTicketCounter:DTC|cost[2]   ; DigitalTicketCounter:DTC|money[2]  ; clk        ; clk      ; None                        ; None                      ; 44.700 ns               ;
+; N/A                                     ; 20.53 MHz ( period = 48.700 ns )                    ; DigitalTicketCounter:DTC|cost[0]   ; DigitalTicketCounter:DTC|money[2]  ; clk        ; clk      ; None                        ; None                      ; 44.700 ns               ;
+; N/A                                     ; 20.53 MHz ( period = 48.700 ns )                    ; Debounce:d7|D_FF:d2|Q              ; DigitalTicketCounter:DTC|price1[0] ; clk        ; clk      ; None                        ; None                      ; 32.800 ns               ;
+; N/A                                     ; 20.58 MHz ( period = 48.600 ns )                    ; DigitalTicketCounter:DTC|cost[5]   ; DigitalTicketCounter:DTC|money[3]  ; clk        ; clk      ; None                        ; None                      ; 44.600 ns               ;
+; N/A                                     ; 20.58 MHz ( period = 48.600 ns )                    ; Debounce:d5|D_FF:d2|Q              ; DigitalTicketCounter:DTC|money[3]  ; clk        ; clk      ; None                        ; None                      ; 32.700 ns               ;
+; N/A                                     ; 20.58 MHz ( period = 48.600 ns )                    ; DigitalTicketCounter:DTC|cost[1]   ; DigitalTicketCounter:DTC|cost[5]   ; clk        ; clk      ; None                        ; None                      ; 44.600 ns               ;
+; N/A                                     ; 20.58 MHz ( period = 48.600 ns )                    ; DigitalTicketCounter:DTC|cost[2]   ; DigitalTicketCounter:DTC|cost[5]   ; clk        ; clk      ; None                        ; None                      ; 44.600 ns               ;
+; N/A                                     ; 20.58 MHz ( period = 48.600 ns )                    ; DigitalTicketCounter:DTC|cost[0]   ; DigitalTicketCounter:DTC|cost[5]   ; clk        ; clk      ; None                        ; None                      ; 44.600 ns               ;
+; N/A                                     ; 20.58 MHz ( period = 48.600 ns )                    ; DigitalTicketCounter:DTC|cost[1]   ; DigitalTicketCounter:DTC|cost[4]   ; clk        ; clk      ; None                        ; None                      ; 44.600 ns               ;
+; N/A                                     ; 20.58 MHz ( period = 48.600 ns )                    ; DigitalTicketCounter:DTC|cost[2]   ; DigitalTicketCounter:DTC|cost[4]   ; clk        ; clk      ; None                        ; None                      ; 44.600 ns               ;
+; Timing analysis restricted to 200 rows. ; To change the limit use Settings (Assignments menu) ;                                    ;                                    ;            ;          ;                             ;                           ;                         ;
++-----------------------------------------+-----------------------------------------------------+------------------------------------+------------------------------------+------------+----------+-----------------------------+---------------------------+-------------------------+
+
+
++-------------------------------------------------------------------------------------------------+
+; tsu                                                                                             ;
++-------+--------------+------------+-------------+------------------------------------+----------+
+; Slack ; Required tsu ; Actual tsu ; From        ; To                                 ; To Clock ;
++-------+--------------+------------+-------------+------------------------------------+----------+
+; N/A   ; None         ; 51.400 ns  ; select[0]   ; DigitalTicketCounter:DTC|money[3]  ; clk      ;
+; N/A   ; None         ; 51.400 ns  ; select[1]   ; DigitalTicketCounter:DTC|money[3]  ; clk      ;
+; N/A   ; None         ; 51.300 ns  ; select[2]   ; DigitalTicketCounter:DTC|money[3]  ; clk      ;
+; N/A   ; None         ; 51.000 ns  ; select[1]   ; DigitalTicketCounter:DTC|quant[1]  ; clk      ;
+; N/A   ; None         ; 48.400 ns  ; select[0]   ; DigitalTicketCounter:DTC|money[2]  ; clk      ;
+; N/A   ; None         ; 48.400 ns  ; select[1]   ; DigitalTicketCounter:DTC|money[2]  ; clk      ;
+; N/A   ; None         ; 48.400 ns  ; select[1]   ; DigitalTicketCounter:DTC|quant[0]  ; clk      ;
+; N/A   ; None         ; 48.300 ns  ; select[2]   ; DigitalTicketCounter:DTC|money[2]  ; clk      ;
+; N/A   ; None         ; 48.100 ns  ; select[1]   ; DigitalTicketCounter:DTC|quant[2]  ; clk      ;
+; N/A   ; None         ; 47.200 ns  ; select[1]   ; DigitalTicketCounter:DTC|cost[5]   ; clk      ;
+; N/A   ; None         ; 47.200 ns  ; select[1]   ; DigitalTicketCounter:DTC|cost[4]   ; clk      ;
+; N/A   ; None         ; 44.900 ns  ; select[0]   ; DigitalTicketCounter:DTC|money[1]  ; clk      ;
+; N/A   ; None         ; 44.900 ns  ; select[1]   ; DigitalTicketCounter:DTC|money[1]  ; clk      ;
+; N/A   ; None         ; 44.800 ns  ; select[2]   ; DigitalTicketCounter:DTC|money[1]  ; clk      ;
+; N/A   ; None         ; 43.200 ns  ; select[2]   ; DigitalTicketCounter:DTC|quant[1]  ; clk      ;
+; N/A   ; None         ; 42.000 ns  ; select[0]   ; DigitalTicketCounter:DTC|money[7]  ; clk      ;
+; N/A   ; None         ; 42.000 ns  ; select[0]   ; DigitalTicketCounter:DTC|money[6]  ; clk      ;
+; N/A   ; None         ; 42.000 ns  ; select[0]   ; DigitalTicketCounter:DTC|money[5]  ; clk      ;
+; N/A   ; None         ; 42.000 ns  ; select[0]   ; DigitalTicketCounter:DTC|money[4]  ; clk      ;
+; N/A   ; None         ; 42.000 ns  ; select[1]   ; DigitalTicketCounter:DTC|money[7]  ; clk      ;
+; N/A   ; None         ; 42.000 ns  ; select[1]   ; DigitalTicketCounter:DTC|money[6]  ; clk      ;
+; N/A   ; None         ; 42.000 ns  ; select[1]   ; DigitalTicketCounter:DTC|money[5]  ; clk      ;
+; N/A   ; None         ; 42.000 ns  ; select[1]   ; DigitalTicketCounter:DTC|money[4]  ; clk      ;
+; N/A   ; None         ; 41.900 ns  ; select[2]   ; DigitalTicketCounter:DTC|money[7]  ; clk      ;
+; N/A   ; None         ; 41.900 ns  ; select[2]   ; DigitalTicketCounter:DTC|money[6]  ; clk      ;
+; N/A   ; None         ; 41.900 ns  ; select[2]   ; DigitalTicketCounter:DTC|money[5]  ; clk      ;
+; N/A   ; None         ; 41.900 ns  ; select[2]   ; DigitalTicketCounter:DTC|money[4]  ; clk      ;
+; N/A   ; None         ; 41.400 ns  ; select[0]   ; DigitalTicketCounter:DTC|money[0]  ; clk      ;
+; N/A   ; None         ; 41.400 ns  ; select[1]   ; DigitalTicketCounter:DTC|money[0]  ; clk      ;
+; N/A   ; None         ; 41.300 ns  ; select[2]   ; DigitalTicketCounter:DTC|money[0]  ; clk      ;
+; N/A   ; None         ; 40.600 ns  ; select[2]   ; DigitalTicketCounter:DTC|quant[0]  ; clk      ;
+; N/A   ; None         ; 40.500 ns  ; select[1]   ; DigitalTicketCounter:DTC|stock2[1] ; clk      ;
+; N/A   ; None         ; 40.500 ns  ; select[1]   ; DigitalTicketCounter:DTC|stock2[2] ; clk      ;
+; N/A   ; None         ; 40.500 ns  ; select[1]   ; DigitalTicketCounter:DTC|stock2[0] ; clk      ;
+; N/A   ; None         ; 40.400 ns  ; select[2]   ; DigitalTicketCounter:DTC|stock2[1] ; clk      ;
+; N/A   ; None         ; 40.400 ns  ; select[2]   ; DigitalTicketCounter:DTC|stock2[2] ; clk      ;
+; N/A   ; None         ; 40.400 ns  ; select[2]   ; DigitalTicketCounter:DTC|stock2[0] ; clk      ;
+; N/A   ; None         ; 40.300 ns  ; select[0]   ; DigitalTicketCounter:DTC|stock2[1] ; clk      ;
+; N/A   ; None         ; 40.300 ns  ; select[0]   ; DigitalTicketCounter:DTC|stock2[2] ; clk      ;
+; N/A   ; None         ; 40.300 ns  ; select[0]   ; DigitalTicketCounter:DTC|stock2[0] ; clk      ;
+; N/A   ; None         ; 40.300 ns  ; select[2]   ; DigitalTicketCounter:DTC|quant[2]  ; clk      ;
+; N/A   ; None         ; 39.400 ns  ; select[2]   ; DigitalTicketCounter:DTC|cost[5]   ; clk      ;
+; N/A   ; None         ; 39.400 ns  ; select[2]   ; DigitalTicketCounter:DTC|cost[4]   ; clk      ;
+; N/A   ; None         ; 38.700 ns  ; select[0]   ; DigitalTicketCounter:DTC|cost[3]   ; clk      ;
+; N/A   ; None         ; 38.600 ns  ; select[1]   ; DigitalTicketCounter:DTC|cost[3]   ; clk      ;
+; N/A   ; None         ; 38.400 ns  ; select[0]   ; DigitalTicketCounter:DTC|cost[1]   ; clk      ;
+; N/A   ; None         ; 38.400 ns  ; select[0]   ; DigitalTicketCounter:DTC|cost[2]   ; clk      ;
+; N/A   ; None         ; 38.300 ns  ; select[1]   ; DigitalTicketCounter:DTC|cost[1]   ; clk      ;
+; N/A   ; None         ; 38.300 ns  ; select[1]   ; DigitalTicketCounter:DTC|cost[2]   ; clk      ;
+; N/A   ; None         ; 38.200 ns  ; select[2]   ; DigitalTicketCounter:DTC|cost[3]   ; clk      ;
+; N/A   ; None         ; 37.900 ns  ; select[2]   ; DigitalTicketCounter:DTC|cost[1]   ; clk      ;
+; N/A   ; None         ; 37.900 ns  ; select[2]   ; DigitalTicketCounter:DTC|cost[2]   ; clk      ;
+; N/A   ; None         ; 36.900 ns  ; select[0]   ; DigitalTicketCounter:DTC|quant[1]  ; clk      ;
+; N/A   ; None         ; 35.900 ns  ; select[0]   ; DigitalTicketCounter:DTC|cost[0]   ; clk      ;
+; N/A   ; None         ; 35.800 ns  ; select[1]   ; DigitalTicketCounter:DTC|cost[0]   ; clk      ;
+; N/A   ; None         ; 35.400 ns  ; select[2]   ; DigitalTicketCounter:DTC|cost[0]   ; clk      ;
+; N/A   ; None         ; 34.300 ns  ; select[0]   ; DigitalTicketCounter:DTC|quant[0]  ; clk      ;
+; N/A   ; None         ; 34.000 ns  ; select[0]   ; DigitalTicketCounter:DTC|quant[2]  ; clk      ;
+; N/A   ; None         ; 33.900 ns  ; select[0]   ; DigitalTicketCounter:DTC|stock0[0] ; clk      ;
+; N/A   ; None         ; 33.800 ns  ; select[0]   ; DigitalTicketCounter:DTC|stock0[1] ; clk      ;
+; N/A   ; None         ; 33.800 ns  ; select[0]   ; DigitalTicketCounter:DTC|stock0[2] ; clk      ;
+; N/A   ; None         ; 33.800 ns  ; select[1]   ; DigitalTicketCounter:DTC|stock1[1] ; clk      ;
+; N/A   ; None         ; 33.800 ns  ; select[1]   ; DigitalTicketCounter:DTC|stock1[2] ; clk      ;
+; N/A   ; None         ; 33.700 ns  ; select[2]   ; DigitalTicketCounter:DTC|stock0[0] ; clk      ;
+; N/A   ; None         ; 33.700 ns  ; select[2]   ; DigitalTicketCounter:DTC|stock1[1] ; clk      ;
+; N/A   ; None         ; 33.700 ns  ; select[2]   ; DigitalTicketCounter:DTC|stock1[2] ; clk      ;
+; N/A   ; None         ; 33.600 ns  ; select[0]   ; DigitalTicketCounter:DTC|stock1[1] ; clk      ;
+; N/A   ; None         ; 33.600 ns  ; select[0]   ; DigitalTicketCounter:DTC|stock1[2] ; clk      ;
+; N/A   ; None         ; 33.600 ns  ; select[2]   ; DigitalTicketCounter:DTC|stock0[1] ; clk      ;
+; N/A   ; None         ; 33.600 ns  ; select[2]   ; DigitalTicketCounter:DTC|stock0[2] ; clk      ;
+; N/A   ; None         ; 33.500 ns  ; select[1]   ; DigitalTicketCounter:DTC|stock0[0] ; clk      ;
+; N/A   ; None         ; 33.400 ns  ; select[1]   ; DigitalTicketCounter:DTC|stock0[1] ; clk      ;
+; N/A   ; None         ; 33.400 ns  ; select[1]   ; DigitalTicketCounter:DTC|stock0[2] ; clk      ;
+; N/A   ; None         ; 33.100 ns  ; select[0]   ; DigitalTicketCounter:DTC|cost[5]   ; clk      ;
+; N/A   ; None         ; 33.100 ns  ; select[0]   ; DigitalTicketCounter:DTC|cost[4]   ; clk      ;
+; N/A   ; None         ; 31.500 ns  ; select[1]   ; DigitalTicketCounter:DTC|stock1[0] ; clk      ;
+; N/A   ; None         ; 31.400 ns  ; select[2]   ; DigitalTicketCounter:DTC|stock1[0] ; clk      ;
+; N/A   ; None         ; 31.300 ns  ; select[0]   ; DigitalTicketCounter:DTC|stock1[0] ; clk      ;
+; N/A   ; None         ; 29.300 ns  ; password[0] ; DigitalTicketCounter:DTC|price2[2] ; clk      ;
+; N/A   ; None         ; 29.300 ns  ; password[0] ; DigitalTicketCounter:DTC|price2[0] ; clk      ;
+; N/A   ; None         ; 29.300 ns  ; password[1] ; DigitalTicketCounter:DTC|price2[2] ; clk      ;
+; N/A   ; None         ; 29.300 ns  ; password[1] ; DigitalTicketCounter:DTC|price2[0] ; clk      ;
+; N/A   ; None         ; 29.300 ns  ; password[3] ; DigitalTicketCounter:DTC|price2[2] ; clk      ;
+; N/A   ; None         ; 29.300 ns  ; password[3] ; DigitalTicketCounter:DTC|price2[0] ; clk      ;
+; N/A   ; None         ; 29.200 ns  ; password[0] ; DigitalTicketCounter:DTC|price0[0] ; clk      ;
+; N/A   ; None         ; 29.200 ns  ; password[0] ; DigitalTicketCounter:DTC|price0[1] ; clk      ;
+; N/A   ; None         ; 29.200 ns  ; password[0] ; DigitalTicketCounter:DTC|price0[2] ; clk      ;
+; N/A   ; None         ; 29.200 ns  ; password[1] ; DigitalTicketCounter:DTC|price0[0] ; clk      ;
+; N/A   ; None         ; 29.200 ns  ; password[1] ; DigitalTicketCounter:DTC|price0[1] ; clk      ;
+; N/A   ; None         ; 29.200 ns  ; password[1] ; DigitalTicketCounter:DTC|price0[2] ; clk      ;
+; N/A   ; None         ; 29.200 ns  ; password[3] ; DigitalTicketCounter:DTC|price0[0] ; clk      ;
+; N/A   ; None         ; 29.200 ns  ; password[3] ; DigitalTicketCounter:DTC|price0[1] ; clk      ;
+; N/A   ; None         ; 29.200 ns  ; password[3] ; DigitalTicketCounter:DTC|price0[2] ; clk      ;
+; N/A   ; None         ; 29.000 ns  ; password[2] ; DigitalTicketCounter:DTC|price2[2] ; clk      ;
+; N/A   ; None         ; 29.000 ns  ; password[2] ; DigitalTicketCounter:DTC|price2[0] ; clk      ;
+; N/A   ; None         ; 28.900 ns  ; password[2] ; DigitalTicketCounter:DTC|price0[0] ; clk      ;
+; N/A   ; None         ; 28.900 ns  ; password[2] ; DigitalTicketCounter:DTC|price0[1] ; clk      ;
+; N/A   ; None         ; 28.900 ns  ; password[2] ; DigitalTicketCounter:DTC|price0[2] ; clk      ;
+; N/A   ; None         ; 28.600 ns  ; password[0] ; DigitalTicketCounter:DTC|price1[2] ; clk      ;
+; N/A   ; None         ; 28.600 ns  ; password[0] ; DigitalTicketCounter:DTC|price1[1] ; clk      ;
+; N/A   ; None         ; 28.600 ns  ; password[1] ; DigitalTicketCounter:DTC|price1[2] ; clk      ;
+; N/A   ; None         ; 28.600 ns  ; password[1] ; DigitalTicketCounter:DTC|price1[1] ; clk      ;
+; N/A   ; None         ; 28.600 ns  ; password[3] ; DigitalTicketCounter:DTC|price1[2] ; clk      ;
+; N/A   ; None         ; 28.600 ns  ; password[3] ; DigitalTicketCounter:DTC|price1[1] ; clk      ;
+; N/A   ; None         ; 28.300 ns  ; password[2] ; DigitalTicketCounter:DTC|price1[2] ; clk      ;
+; N/A   ; None         ; 28.300 ns  ; password[2] ; DigitalTicketCounter:DTC|price1[1] ; clk      ;
+; N/A   ; None         ; 28.200 ns  ; password[0] ; DigitalTicketCounter:DTC|price1[0] ; clk      ;
+; N/A   ; None         ; 28.200 ns  ; password[1] ; DigitalTicketCounter:DTC|price1[0] ; clk      ;
+; N/A   ; None         ; 28.200 ns  ; password[3] ; DigitalTicketCounter:DTC|price1[0] ; clk      ;
+; N/A   ; None         ; 27.900 ns  ; password[2] ; DigitalTicketCounter:DTC|price1[0] ; clk      ;
+; N/A   ; None         ; 27.600 ns  ; password[0] ; DigitalTicketCounter:DTC|stock2[1] ; clk      ;
+; N/A   ; None         ; 27.600 ns  ; password[0] ; DigitalTicketCounter:DTC|stock2[2] ; clk      ;
+; N/A   ; None         ; 27.600 ns  ; password[0] ; DigitalTicketCounter:DTC|stock2[0] ; clk      ;
+; N/A   ; None         ; 27.600 ns  ; password[1] ; DigitalTicketCounter:DTC|stock2[1] ; clk      ;
+; N/A   ; None         ; 27.600 ns  ; password[1] ; DigitalTicketCounter:DTC|stock2[2] ; clk      ;
+; N/A   ; None         ; 27.600 ns  ; password[1] ; DigitalTicketCounter:DTC|stock2[0] ; clk      ;
+; N/A   ; None         ; 27.600 ns  ; password[3] ; DigitalTicketCounter:DTC|stock2[1] ; clk      ;
+; N/A   ; None         ; 27.600 ns  ; password[3] ; DigitalTicketCounter:DTC|stock2[2] ; clk      ;
+; N/A   ; None         ; 27.600 ns  ; password[3] ; DigitalTicketCounter:DTC|stock2[0] ; clk      ;
+; N/A   ; None         ; 27.500 ns  ; password[0] ; DigitalTicketCounter:DTC|price2[1] ; clk      ;
+; N/A   ; None         ; 27.500 ns  ; password[1] ; DigitalTicketCounter:DTC|price2[1] ; clk      ;
+; N/A   ; None         ; 27.500 ns  ; password[3] ; DigitalTicketCounter:DTC|price2[1] ; clk      ;
+; N/A   ; None         ; 27.300 ns  ; password[2] ; DigitalTicketCounter:DTC|stock2[1] ; clk      ;
+; N/A   ; None         ; 27.300 ns  ; password[2] ; DigitalTicketCounter:DTC|stock2[2] ; clk      ;
+; N/A   ; None         ; 27.300 ns  ; password[2] ; DigitalTicketCounter:DTC|stock2[0] ; clk      ;
+; N/A   ; None         ; 27.200 ns  ; password[2] ; DigitalTicketCounter:DTC|price2[1] ; clk      ;
+; N/A   ; None         ; 26.700 ns  ; password[0] ; DigitalTicketCounter:DTC|stock0[0] ; clk      ;
+; N/A   ; None         ; 26.700 ns  ; password[1] ; DigitalTicketCounter:DTC|stock0[0] ; clk      ;
+; N/A   ; None         ; 26.700 ns  ; password[3] ; DigitalTicketCounter:DTC|stock0[0] ; clk      ;
+; N/A   ; None         ; 26.600 ns  ; password[0] ; DigitalTicketCounter:DTC|stock0[1] ; clk      ;
+; N/A   ; None         ; 26.600 ns  ; password[0] ; DigitalTicketCounter:DTC|stock0[2] ; clk      ;
+; N/A   ; None         ; 26.600 ns  ; password[1] ; DigitalTicketCounter:DTC|stock0[1] ; clk      ;
+; N/A   ; None         ; 26.600 ns  ; password[1] ; DigitalTicketCounter:DTC|stock0[2] ; clk      ;
+; N/A   ; None         ; 26.600 ns  ; password[3] ; DigitalTicketCounter:DTC|stock0[1] ; clk      ;
+; N/A   ; None         ; 26.600 ns  ; password[3] ; DigitalTicketCounter:DTC|stock0[2] ; clk      ;
+; N/A   ; None         ; 26.500 ns  ; password[0] ; DigitalTicketCounter:DTC|stock1[1] ; clk      ;
+; N/A   ; None         ; 26.500 ns  ; password[0] ; DigitalTicketCounter:DTC|stock1[2] ; clk      ;
+; N/A   ; None         ; 26.500 ns  ; password[1] ; DigitalTicketCounter:DTC|stock1[1] ; clk      ;
+; N/A   ; None         ; 26.500 ns  ; password[1] ; DigitalTicketCounter:DTC|stock1[2] ; clk      ;
+; N/A   ; None         ; 26.500 ns  ; password[3] ; DigitalTicketCounter:DTC|stock1[1] ; clk      ;
+; N/A   ; None         ; 26.500 ns  ; password[3] ; DigitalTicketCounter:DTC|stock1[2] ; clk      ;
+; N/A   ; None         ; 26.400 ns  ; password[2] ; DigitalTicketCounter:DTC|stock0[0] ; clk      ;
+; N/A   ; None         ; 26.300 ns  ; password[2] ; DigitalTicketCounter:DTC|stock0[1] ; clk      ;
+; N/A   ; None         ; 26.300 ns  ; password[2] ; DigitalTicketCounter:DTC|stock0[2] ; clk      ;
+; N/A   ; None         ; 26.200 ns  ; password[2] ; DigitalTicketCounter:DTC|stock1[1] ; clk      ;
+; N/A   ; None         ; 26.200 ns  ; password[2] ; DigitalTicketCounter:DTC|stock1[2] ; clk      ;
+; N/A   ; None         ; 24.200 ns  ; password[0] ; DigitalTicketCounter:DTC|stock1[0] ; clk      ;
+; N/A   ; None         ; 24.200 ns  ; password[1] ; DigitalTicketCounter:DTC|stock1[0] ; clk      ;
+; N/A   ; None         ; 24.200 ns  ; password[3] ; DigitalTicketCounter:DTC|stock1[0] ; clk      ;
+; N/A   ; None         ; 23.900 ns  ; password[2] ; DigitalTicketCounter:DTC|stock1[0] ; clk      ;
+; N/A   ; None         ; 23.300 ns  ; select[1]   ; DigitalTicketCounter:DTC|price2[0] ; clk      ;
+; N/A   ; None         ; 23.200 ns  ; select[2]   ; DigitalTicketCounter:DTC|price2[0] ; clk      ;
+; N/A   ; None         ; 23.100 ns  ; select[0]   ; DigitalTicketCounter:DTC|price2[0] ; clk      ;
+; N/A   ; None         ; 22.900 ns  ; select[1]   ; DigitalTicketCounter:DTC|price2[2] ; clk      ;
+; N/A   ; None         ; 22.800 ns  ; select[2]   ; DigitalTicketCounter:DTC|price2[2] ; clk      ;
+; N/A   ; None         ; 22.700 ns  ; select[0]   ; DigitalTicketCounter:DTC|price2[2] ; clk      ;
+; N/A   ; None         ; 22.600 ns  ; select[0]   ; DigitalTicketCounter:DTC|price0[0] ; clk      ;
+; N/A   ; None         ; 22.500 ns  ; select[1]   ; DigitalTicketCounter:DTC|price1[2] ; clk      ;
+; N/A   ; None         ; 22.400 ns  ; select[2]   ; DigitalTicketCounter:DTC|price0[0] ; clk      ;
+; N/A   ; None         ; 22.400 ns  ; select[2]   ; DigitalTicketCounter:DTC|price1[2] ; clk      ;
+; N/A   ; None         ; 22.300 ns  ; select[0]   ; DigitalTicketCounter:DTC|price1[2] ; clk      ;
+; N/A   ; None         ; 22.300 ns  ; select[1]   ; DigitalTicketCounter:DTC|price1[0] ; clk      ;
+; N/A   ; None         ; 22.200 ns  ; select[1]   ; DigitalTicketCounter:DTC|price0[0] ; clk      ;
+; N/A   ; None         ; 22.200 ns  ; select[1]   ; DigitalTicketCounter:DTC|price1[1] ; clk      ;
+; N/A   ; None         ; 22.200 ns  ; select[2]   ; DigitalTicketCounter:DTC|price1[0] ; clk      ;
+; N/A   ; None         ; 22.100 ns  ; select[0]   ; DigitalTicketCounter:DTC|price1[0] ; clk      ;
+; N/A   ; None         ; 22.100 ns  ; select[2]   ; DigitalTicketCounter:DTC|price1[1] ; clk      ;
+; N/A   ; None         ; 22.000 ns  ; select[0]   ; DigitalTicketCounter:DTC|price1[1] ; clk      ;
+; N/A   ; None         ; 22.000 ns  ; select[1]   ; DigitalTicketCounter:DTC|price2[1] ; clk      ;
+; N/A   ; None         ; 21.900 ns  ; select[2]   ; DigitalTicketCounter:DTC|price2[1] ; clk      ;
+; N/A   ; None         ; 21.800 ns  ; select[0]   ; DigitalTicketCounter:DTC|price2[1] ; clk      ;
+; N/A   ; None         ; 20.700 ns  ; select[0]   ; DigitalTicketCounter:DTC|price0[1] ; clk      ;
+; N/A   ; None         ; 20.700 ns  ; select[2]   ; DigitalTicketCounter:DTC|price0[1] ; clk      ;
+; N/A   ; None         ; 20.500 ns  ; select[1]   ; DigitalTicketCounter:DTC|price0[1] ; clk      ;
+; N/A   ; None         ; 20.400 ns  ; select[0]   ; DigitalTicketCounter:DTC|price0[2] ; clk      ;
+; N/A   ; None         ; 20.400 ns  ; select[2]   ; DigitalTicketCounter:DTC|price0[2] ; clk      ;
+; N/A   ; None         ; 20.200 ns  ; select[1]   ; DigitalTicketCounter:DTC|price0[2] ; clk      ;
+; N/A   ; None         ; 20.000 ns  ; password[0] ; DigitalTicketCounter:DTC|led       ; clk      ;
+; N/A   ; None         ; 20.000 ns  ; password[1] ; DigitalTicketCounter:DTC|led       ; clk      ;
+; N/A   ; None         ; 20.000 ns  ; password[3] ; DigitalTicketCounter:DTC|led       ; clk      ;
+; N/A   ; None         ; 19.700 ns  ; password[2] ; DigitalTicketCounter:DTC|led       ; clk      ;
+; N/A   ; None         ; 2.400 ns   ; reset       ; Debounce:d1|D_FF:d1|Q              ; clk      ;
+; N/A   ; None         ; 2.200 ns   ; tk5         ; Debounce:d2|D_FF:d1|Q              ; clk      ;
+; N/A   ; None         ; 1.500 ns   ; tk10        ; Debounce:d3|D_FF:d1|Q              ; clk      ;
+; N/A   ; None         ; 0.600 ns   ; buy         ; Debounce:d5|D_FF:d1|Q              ; clk      ;
+; N/A   ; None         ; 0.400 ns   ; quantc      ; Debounce:d7|D_FF:d1|Q              ; clk      ;
+; N/A   ; None         ; 0.300 ns   ; tk20        ; Debounce:d4|D_FF:d1|Q              ; clk      ;
+; N/A   ; None         ; -1.400 ns  ; stockc      ; Debounce:d8|D_FF:d1|Q              ; clk      ;
+; N/A   ; None         ; -1.400 ns  ; pricec      ; Debounce:d6|D_FF:d1|Q              ; clk      ;
++-------+--------------+------------+-------------+------------------------------------+----------+
+
+
++----------------------------------------------------------------------------------------------+
+; tco                                                                                          ;
++-------+--------------+------------+------------------------------+--------------+------------+
+; Slack ; Required tco ; Actual tco ; From                         ; To           ; From Clock ;
++-------+--------------+------------+------------------------------+--------------+------------+
+; N/A   ; None         ; 18.300 ns  ; DIG3C:D1|seg[5]              ; mdisp[5]     ; clk        ;
+; N/A   ; None         ; 18.300 ns  ; DIG3C:D1|seg[1]              ; mdisp[1]     ; clk        ;
+; N/A   ; None         ; 18.300 ns  ; DIG3C:D1|seg[0]              ; mdisp[0]     ; clk        ;
+; N/A   ; None         ; 18.200 ns  ; DIG3C:D1|seg[6]              ; mdisp[6]     ; clk        ;
+; N/A   ; None         ; 18.200 ns  ; DIG3C:D1|seg[4]              ; mdisp[4]     ; clk        ;
+; N/A   ; None         ; 18.200 ns  ; DIG3C:D1|seg[3]              ; mdisp[3]     ; clk        ;
+; N/A   ; None         ; 18.100 ns  ; DIG3C:D1|seg[2]              ; mdisp[2]     ; clk        ;
+; N/A   ; None         ; 17.500 ns  ; DIG3C:D1|cathode[2]          ; mcathode[2]  ; clk        ;
+; N/A   ; None         ; 16.500 ns  ; DIG3A:D4|seg[6]              ; stdisp[6]    ; clk        ;
+; N/A   ; None         ; 16.500 ns  ; DIG3A:D4|seg[5]              ; stdisp[5]    ; clk        ;
+; N/A   ; None         ; 16.500 ns  ; DIG3A:D4|seg[4]              ; stdisp[4]    ; clk        ;
+; N/A   ; None         ; 16.500 ns  ; DIG3A:D4|seg[3]              ; stdisp[3]    ; clk        ;
+; N/A   ; None         ; 16.500 ns  ; DIG3A:D4|seg[2]              ; stdisp[2]    ; clk        ;
+; N/A   ; None         ; 16.500 ns  ; DIG3A:D4|seg[1]              ; stdisp[1]    ; clk        ;
+; N/A   ; None         ; 16.500 ns  ; DIG3A:D4|seg[0]              ; stdisp[0]    ; clk        ;
+; N/A   ; None         ; 16.500 ns  ; DIG3A:D4|cathode[2]          ; stcathode[2] ; clk        ;
+; N/A   ; None         ; 16.500 ns  ; DIG3A:D4|cathode[1]          ; stcathode[1] ; clk        ;
+; N/A   ; None         ; 16.500 ns  ; DIG3A:D4|cathode[0]          ; stcathode[0] ; clk        ;
+; N/A   ; None         ; 16.000 ns  ; DIG3C:D1|cathode[1]          ; mcathode[1]  ; clk        ;
+; N/A   ; None         ; 16.000 ns  ; DIG3C:D1|cathode[0]          ; mcathode[0]  ; clk        ;
+; N/A   ; None         ; 15.800 ns  ; DigitalTicketCounter:DTC|led ; led          ; clk        ;
+; N/A   ; None         ; 15.600 ns  ; DIG3A:D2|seg[6]              ; cdisp[6]     ; clk        ;
+; N/A   ; None         ; 15.600 ns  ; DIG3A:D2|seg[5]              ; cdisp[5]     ; clk        ;
+; N/A   ; None         ; 15.600 ns  ; DIG3A:D2|seg[4]              ; cdisp[4]     ; clk        ;
+; N/A   ; None         ; 15.600 ns  ; DIG3A:D2|seg[3]              ; cdisp[3]     ; clk        ;
+; N/A   ; None         ; 15.600 ns  ; DIG3A:D2|seg[2]              ; cdisp[2]     ; clk        ;
+; N/A   ; None         ; 15.600 ns  ; DIG3A:D2|seg[1]              ; cdisp[1]     ; clk        ;
+; N/A   ; None         ; 15.600 ns  ; DIG3A:D2|seg[0]              ; cdisp[0]     ; clk        ;
+; N/A   ; None         ; 15.600 ns  ; DIG3A:D2|cathode[2]          ; ccathode[2]  ; clk        ;
+; N/A   ; None         ; 15.600 ns  ; DIG3A:D2|cathode[1]          ; ccathode[1]  ; clk        ;
+; N/A   ; None         ; 15.600 ns  ; DIG3A:D2|cathode[0]          ; ccathode[0]  ; clk        ;
+; N/A   ; None         ; 14.600 ns  ; DIG3A:D3|seg[6]              ; prdisp[6]    ; clk        ;
+; N/A   ; None         ; 14.600 ns  ; DIG3A:D3|seg[5]              ; prdisp[5]    ; clk        ;
+; N/A   ; None         ; 14.600 ns  ; DIG3A:D3|seg[4]              ; prdisp[4]    ; clk        ;
+; N/A   ; None         ; 14.600 ns  ; DIG3A:D3|seg[3]              ; prdisp[3]    ; clk        ;
+; N/A   ; None         ; 14.600 ns  ; DIG3A:D3|seg[2]              ; prdisp[2]    ; clk        ;
+; N/A   ; None         ; 14.600 ns  ; DIG3A:D3|seg[1]              ; prdisp[1]    ; clk        ;
+; N/A   ; None         ; 14.600 ns  ; DIG3A:D3|seg[0]              ; prdisp[0]    ; clk        ;
+; N/A   ; None         ; 14.600 ns  ; DIG3A:D3|cathode[2]          ; prcathode[2] ; clk        ;
+; N/A   ; None         ; 14.600 ns  ; DIG3A:D3|cathode[1]          ; prcathode[1] ; clk        ;
+; N/A   ; None         ; 14.600 ns  ; DIG3A:D3|cathode[0]          ; prcathode[0] ; clk        ;
++-------+--------------+------------+------------------------------+--------------+------------+
+
+
++--------------------------------------------------------------------------------------------------------+
+; th                                                                                                     ;
++---------------+-------------+------------+-------------+------------------------------------+----------+
+; Minimum Slack ; Required th ; Actual th  ; From        ; To                                 ; To Clock ;
++---------------+-------------+------------+-------------+------------------------------------+----------+
+; N/A           ; None        ; 7.100 ns   ; stockc      ; Debounce:d8|D_FF:d1|Q              ; clk      ;
+; N/A           ; None        ; 7.100 ns   ; pricec      ; Debounce:d6|D_FF:d1|Q              ; clk      ;
+; N/A           ; None        ; 5.400 ns   ; tk20        ; Debounce:d4|D_FF:d1|Q              ; clk      ;
+; N/A           ; None        ; 5.300 ns   ; quantc      ; Debounce:d7|D_FF:d1|Q              ; clk      ;
+; N/A           ; None        ; 5.100 ns   ; buy         ; Debounce:d5|D_FF:d1|Q              ; clk      ;
+; N/A           ; None        ; 4.200 ns   ; tk10        ; Debounce:d3|D_FF:d1|Q              ; clk      ;
+; N/A           ; None        ; 3.500 ns   ; tk5         ; Debounce:d2|D_FF:d1|Q              ; clk      ;
+; N/A           ; None        ; 3.300 ns   ; reset       ; Debounce:d1|D_FF:d1|Q              ; clk      ;
+; N/A           ; None        ; -13.900 ns ; select[0]   ; DigitalTicketCounter:DTC|cost[1]   ; clk      ;
+; N/A           ; None        ; -13.900 ns ; select[0]   ; DigitalTicketCounter:DTC|cost[2]   ; clk      ;
+; N/A           ; None        ; -14.000 ns ; password[2] ; DigitalTicketCounter:DTC|led       ; clk      ;
+; N/A           ; None        ; -14.100 ns ; select[2]   ; DigitalTicketCounter:DTC|cost[1]   ; clk      ;
+; N/A           ; None        ; -14.100 ns ; select[2]   ; DigitalTicketCounter:DTC|cost[2]   ; clk      ;
+; N/A           ; None        ; -14.200 ns ; select[0]   ; DigitalTicketCounter:DTC|cost[0]   ; clk      ;
+; N/A           ; None        ; -14.300 ns ; password[0] ; DigitalTicketCounter:DTC|led       ; clk      ;
+; N/A           ; None        ; -14.300 ns ; password[1] ; DigitalTicketCounter:DTC|led       ; clk      ;
+; N/A           ; None        ; -14.300 ns ; password[3] ; DigitalTicketCounter:DTC|led       ; clk      ;
+; N/A           ; None        ; -14.400 ns ; select[2]   ; DigitalTicketCounter:DTC|cost[0]   ; clk      ;
+; N/A           ; None        ; -14.500 ns ; select[1]   ; DigitalTicketCounter:DTC|price0[2] ; clk      ;
+; N/A           ; None        ; -14.700 ns ; select[0]   ; DigitalTicketCounter:DTC|price0[2] ; clk      ;
+; N/A           ; None        ; -14.700 ns ; select[2]   ; DigitalTicketCounter:DTC|price0[2] ; clk      ;
+; N/A           ; None        ; -14.800 ns ; select[1]   ; DigitalTicketCounter:DTC|price0[1] ; clk      ;
+; N/A           ; None        ; -15.000 ns ; select[0]   ; DigitalTicketCounter:DTC|price0[1] ; clk      ;
+; N/A           ; None        ; -15.000 ns ; select[2]   ; DigitalTicketCounter:DTC|price0[1] ; clk      ;
+; N/A           ; None        ; -15.100 ns ; select[1]   ; DigitalTicketCounter:DTC|cost[1]   ; clk      ;
+; N/A           ; None        ; -15.100 ns ; select[1]   ; DigitalTicketCounter:DTC|cost[2]   ; clk      ;
+; N/A           ; None        ; -15.400 ns ; select[1]   ; DigitalTicketCounter:DTC|cost[0]   ; clk      ;
+; N/A           ; None        ; -16.100 ns ; select[0]   ; DigitalTicketCounter:DTC|price2[1] ; clk      ;
+; N/A           ; None        ; -16.200 ns ; select[2]   ; DigitalTicketCounter:DTC|price2[1] ; clk      ;
+; N/A           ; None        ; -16.300 ns ; select[0]   ; DigitalTicketCounter:DTC|price1[1] ; clk      ;
+; N/A           ; None        ; -16.300 ns ; select[1]   ; DigitalTicketCounter:DTC|price2[1] ; clk      ;
+; N/A           ; None        ; -16.400 ns ; select[0]   ; DigitalTicketCounter:DTC|price1[0] ; clk      ;
+; N/A           ; None        ; -16.400 ns ; select[2]   ; DigitalTicketCounter:DTC|price1[1] ; clk      ;
+; N/A           ; None        ; -16.500 ns ; select[1]   ; DigitalTicketCounter:DTC|price0[0] ; clk      ;
+; N/A           ; None        ; -16.500 ns ; select[1]   ; DigitalTicketCounter:DTC|price1[1] ; clk      ;
+; N/A           ; None        ; -16.500 ns ; select[2]   ; DigitalTicketCounter:DTC|price1[0] ; clk      ;
+; N/A           ; None        ; -16.600 ns ; select[0]   ; DigitalTicketCounter:DTC|price1[2] ; clk      ;
+; N/A           ; None        ; -16.600 ns ; select[1]   ; DigitalTicketCounter:DTC|price1[0] ; clk      ;
+; N/A           ; None        ; -16.700 ns ; select[2]   ; DigitalTicketCounter:DTC|price0[0] ; clk      ;
+; N/A           ; None        ; -16.700 ns ; select[2]   ; DigitalTicketCounter:DTC|price1[2] ; clk      ;
+; N/A           ; None        ; -16.800 ns ; select[1]   ; DigitalTicketCounter:DTC|price1[2] ; clk      ;
+; N/A           ; None        ; -16.900 ns ; select[0]   ; DigitalTicketCounter:DTC|price0[0] ; clk      ;
+; N/A           ; None        ; -17.000 ns ; select[0]   ; DigitalTicketCounter:DTC|price2[2] ; clk      ;
+; N/A           ; None        ; -17.100 ns ; select[0]   ; DigitalTicketCounter:DTC|cost[3]   ; clk      ;
+; N/A           ; None        ; -17.100 ns ; select[2]   ; DigitalTicketCounter:DTC|price2[2] ; clk      ;
+; N/A           ; None        ; -17.200 ns ; select[1]   ; DigitalTicketCounter:DTC|price2[2] ; clk      ;
+; N/A           ; None        ; -17.300 ns ; select[2]   ; DigitalTicketCounter:DTC|cost[3]   ; clk      ;
+; N/A           ; None        ; -17.400 ns ; select[0]   ; DigitalTicketCounter:DTC|price2[0] ; clk      ;
+; N/A           ; None        ; -17.500 ns ; select[2]   ; DigitalTicketCounter:DTC|price2[0] ; clk      ;
+; N/A           ; None        ; -17.600 ns ; select[1]   ; DigitalTicketCounter:DTC|price2[0] ; clk      ;
+; N/A           ; None        ; -18.000 ns ; select[1]   ; DigitalTicketCounter:DTC|cost[5]   ; clk      ;
+; N/A           ; None        ; -18.200 ns ; password[2] ; DigitalTicketCounter:DTC|stock1[0] ; clk      ;
+; N/A           ; None        ; -18.300 ns ; select[1]   ; DigitalTicketCounter:DTC|cost[3]   ; clk      ;
+; N/A           ; None        ; -18.500 ns ; password[0] ; DigitalTicketCounter:DTC|stock1[0] ; clk      ;
+; N/A           ; None        ; -18.500 ns ; password[1] ; DigitalTicketCounter:DTC|stock1[0] ; clk      ;
+; N/A           ; None        ; -18.500 ns ; password[3] ; DigitalTicketCounter:DTC|stock1[0] ; clk      ;
+; N/A           ; None        ; -18.500 ns ; select[1]   ; DigitalTicketCounter:DTC|cost[4]   ; clk      ;
+; N/A           ; None        ; -20.500 ns ; password[2] ; DigitalTicketCounter:DTC|stock1[1] ; clk      ;
+; N/A           ; None        ; -20.500 ns ; password[2] ; DigitalTicketCounter:DTC|stock1[2] ; clk      ;
+; N/A           ; None        ; -20.600 ns ; password[2] ; DigitalTicketCounter:DTC|stock0[1] ; clk      ;
+; N/A           ; None        ; -20.600 ns ; password[2] ; DigitalTicketCounter:DTC|stock0[2] ; clk      ;
+; N/A           ; None        ; -20.700 ns ; password[2] ; DigitalTicketCounter:DTC|stock0[0] ; clk      ;
+; N/A           ; None        ; -20.800 ns ; password[0] ; DigitalTicketCounter:DTC|stock1[1] ; clk      ;
+; N/A           ; None        ; -20.800 ns ; password[0] ; DigitalTicketCounter:DTC|stock1[2] ; clk      ;
+; N/A           ; None        ; -20.800 ns ; password[1] ; DigitalTicketCounter:DTC|stock1[1] ; clk      ;
+; N/A           ; None        ; -20.800 ns ; password[1] ; DigitalTicketCounter:DTC|stock1[2] ; clk      ;
+; N/A           ; None        ; -20.800 ns ; password[3] ; DigitalTicketCounter:DTC|stock1[1] ; clk      ;
+; N/A           ; None        ; -20.800 ns ; password[3] ; DigitalTicketCounter:DTC|stock1[2] ; clk      ;
+; N/A           ; None        ; -20.900 ns ; password[0] ; DigitalTicketCounter:DTC|stock0[1] ; clk      ;
+; N/A           ; None        ; -20.900 ns ; password[0] ; DigitalTicketCounter:DTC|stock0[2] ; clk      ;
+; N/A           ; None        ; -20.900 ns ; password[1] ; DigitalTicketCounter:DTC|stock0[1] ; clk      ;
+; N/A           ; None        ; -20.900 ns ; password[1] ; DigitalTicketCounter:DTC|stock0[2] ; clk      ;
+; N/A           ; None        ; -20.900 ns ; password[3] ; DigitalTicketCounter:DTC|stock0[1] ; clk      ;
+; N/A           ; None        ; -20.900 ns ; password[3] ; DigitalTicketCounter:DTC|stock0[2] ; clk      ;
+; N/A           ; None        ; -21.000 ns ; password[0] ; DigitalTicketCounter:DTC|stock0[0] ; clk      ;
+; N/A           ; None        ; -21.000 ns ; password[1] ; DigitalTicketCounter:DTC|stock0[0] ; clk      ;
+; N/A           ; None        ; -21.000 ns ; password[3] ; DigitalTicketCounter:DTC|stock0[0] ; clk      ;
+; N/A           ; None        ; -21.500 ns ; password[2] ; DigitalTicketCounter:DTC|price2[1] ; clk      ;
+; N/A           ; None        ; -21.600 ns ; password[2] ; DigitalTicketCounter:DTC|stock2[1] ; clk      ;
+; N/A           ; None        ; -21.600 ns ; password[2] ; DigitalTicketCounter:DTC|stock2[2] ; clk      ;
+; N/A           ; None        ; -21.600 ns ; password[2] ; DigitalTicketCounter:DTC|stock2[0] ; clk      ;
+; N/A           ; None        ; -21.600 ns ; select[0]   ; DigitalTicketCounter:DTC|cost[5]   ; clk      ;
+; N/A           ; None        ; -21.600 ns ; select[0]   ; DigitalTicketCounter:DTC|cost[4]   ; clk      ;
+; N/A           ; None        ; -21.700 ns ; select[2]   ; DigitalTicketCounter:DTC|cost[5]   ; clk      ;
+; N/A           ; None        ; -21.700 ns ; select[2]   ; DigitalTicketCounter:DTC|cost[4]   ; clk      ;
+; N/A           ; None        ; -21.800 ns ; password[0] ; DigitalTicketCounter:DTC|price2[1] ; clk      ;
+; N/A           ; None        ; -21.800 ns ; password[1] ; DigitalTicketCounter:DTC|price2[1] ; clk      ;
+; N/A           ; None        ; -21.800 ns ; password[3] ; DigitalTicketCounter:DTC|price2[1] ; clk      ;
+; N/A           ; None        ; -21.900 ns ; password[0] ; DigitalTicketCounter:DTC|stock2[1] ; clk      ;
+; N/A           ; None        ; -21.900 ns ; password[0] ; DigitalTicketCounter:DTC|stock2[2] ; clk      ;
+; N/A           ; None        ; -21.900 ns ; password[0] ; DigitalTicketCounter:DTC|stock2[0] ; clk      ;
+; N/A           ; None        ; -21.900 ns ; password[1] ; DigitalTicketCounter:DTC|stock2[1] ; clk      ;
+; N/A           ; None        ; -21.900 ns ; password[1] ; DigitalTicketCounter:DTC|stock2[2] ; clk      ;
+; N/A           ; None        ; -21.900 ns ; password[1] ; DigitalTicketCounter:DTC|stock2[0] ; clk      ;
+; N/A           ; None        ; -21.900 ns ; password[3] ; DigitalTicketCounter:DTC|stock2[1] ; clk      ;
+; N/A           ; None        ; -21.900 ns ; password[3] ; DigitalTicketCounter:DTC|stock2[2] ; clk      ;
+; N/A           ; None        ; -21.900 ns ; password[3] ; DigitalTicketCounter:DTC|stock2[0] ; clk      ;
+; N/A           ; None        ; -22.200 ns ; password[2] ; DigitalTicketCounter:DTC|price1[0] ; clk      ;
+; N/A           ; None        ; -22.500 ns ; password[0] ; DigitalTicketCounter:DTC|price1[0] ; clk      ;
+; N/A           ; None        ; -22.500 ns ; password[1] ; DigitalTicketCounter:DTC|price1[0] ; clk      ;
+; N/A           ; None        ; -22.500 ns ; password[3] ; DigitalTicketCounter:DTC|price1[0] ; clk      ;
+; N/A           ; None        ; -22.600 ns ; password[2] ; DigitalTicketCounter:DTC|price1[2] ; clk      ;
+; N/A           ; None        ; -22.600 ns ; password[2] ; DigitalTicketCounter:DTC|price1[1] ; clk      ;
+; N/A           ; None        ; -22.900 ns ; password[0] ; DigitalTicketCounter:DTC|price1[2] ; clk      ;
+; N/A           ; None        ; -22.900 ns ; password[0] ; DigitalTicketCounter:DTC|price1[1] ; clk      ;
+; N/A           ; None        ; -22.900 ns ; password[1] ; DigitalTicketCounter:DTC|price1[2] ; clk      ;
+; N/A           ; None        ; -22.900 ns ; password[1] ; DigitalTicketCounter:DTC|price1[1] ; clk      ;
+; N/A           ; None        ; -22.900 ns ; password[3] ; DigitalTicketCounter:DTC|price1[2] ; clk      ;
+; N/A           ; None        ; -22.900 ns ; password[3] ; DigitalTicketCounter:DTC|price1[1] ; clk      ;
+; N/A           ; None        ; -23.100 ns ; select[2]   ; DigitalTicketCounter:DTC|money[0]  ; clk      ;
+; N/A           ; None        ; -23.200 ns ; password[2] ; DigitalTicketCounter:DTC|price0[0] ; clk      ;
+; N/A           ; None        ; -23.200 ns ; password[2] ; DigitalTicketCounter:DTC|price0[1] ; clk      ;
+; N/A           ; None        ; -23.200 ns ; password[2] ; DigitalTicketCounter:DTC|price0[2] ; clk      ;
+; N/A           ; None        ; -23.200 ns ; select[0]   ; DigitalTicketCounter:DTC|stock2[0] ; clk      ;
+; N/A           ; None        ; -23.200 ns ; select[0]   ; DigitalTicketCounter:DTC|stock1[0] ; clk      ;
+; N/A           ; None        ; -23.300 ns ; password[2] ; DigitalTicketCounter:DTC|price2[2] ; clk      ;
+; N/A           ; None        ; -23.300 ns ; password[2] ; DigitalTicketCounter:DTC|price2[0] ; clk      ;
+; N/A           ; None        ; -23.300 ns ; select[1]   ; DigitalTicketCounter:DTC|stock0[1] ; clk      ;
+; N/A           ; None        ; -23.300 ns ; select[1]   ; DigitalTicketCounter:DTC|stock0[2] ; clk      ;
+; N/A           ; None        ; -23.300 ns ; select[2]   ; DigitalTicketCounter:DTC|stock2[0] ; clk      ;
+; N/A           ; None        ; -23.300 ns ; select[2]   ; DigitalTicketCounter:DTC|stock1[0] ; clk      ;
+; N/A           ; None        ; -23.400 ns ; select[1]   ; DigitalTicketCounter:DTC|stock2[0] ; clk      ;
+; N/A           ; None        ; -23.400 ns ; select[1]   ; DigitalTicketCounter:DTC|stock1[0] ; clk      ;
+; N/A           ; None        ; -23.500 ns ; password[0] ; DigitalTicketCounter:DTC|price0[0] ; clk      ;
+; N/A           ; None        ; -23.500 ns ; password[0] ; DigitalTicketCounter:DTC|price0[1] ; clk      ;
+; N/A           ; None        ; -23.500 ns ; password[0] ; DigitalTicketCounter:DTC|price0[2] ; clk      ;
+; N/A           ; None        ; -23.500 ns ; password[1] ; DigitalTicketCounter:DTC|price0[0] ; clk      ;
+; N/A           ; None        ; -23.500 ns ; password[1] ; DigitalTicketCounter:DTC|price0[1] ; clk      ;
+; N/A           ; None        ; -23.500 ns ; password[1] ; DigitalTicketCounter:DTC|price0[2] ; clk      ;
+; N/A           ; None        ; -23.500 ns ; password[3] ; DigitalTicketCounter:DTC|price0[0] ; clk      ;
+; N/A           ; None        ; -23.500 ns ; password[3] ; DigitalTicketCounter:DTC|price0[1] ; clk      ;
+; N/A           ; None        ; -23.500 ns ; password[3] ; DigitalTicketCounter:DTC|price0[2] ; clk      ;
+; N/A           ; None        ; -23.500 ns ; select[0]   ; DigitalTicketCounter:DTC|stock2[1] ; clk      ;
+; N/A           ; None        ; -23.500 ns ; select[0]   ; DigitalTicketCounter:DTC|stock1[1] ; clk      ;
+; N/A           ; None        ; -23.500 ns ; select[0]   ; DigitalTicketCounter:DTC|stock1[2] ; clk      ;
+; N/A           ; None        ; -23.500 ns ; select[2]   ; DigitalTicketCounter:DTC|stock0[1] ; clk      ;
+; N/A           ; None        ; -23.500 ns ; select[2]   ; DigitalTicketCounter:DTC|stock0[2] ; clk      ;
+; N/A           ; None        ; -23.600 ns ; password[0] ; DigitalTicketCounter:DTC|price2[2] ; clk      ;
+; N/A           ; None        ; -23.600 ns ; password[0] ; DigitalTicketCounter:DTC|price2[0] ; clk      ;
+; N/A           ; None        ; -23.600 ns ; password[1] ; DigitalTicketCounter:DTC|price2[2] ; clk      ;
+; N/A           ; None        ; -23.600 ns ; password[1] ; DigitalTicketCounter:DTC|price2[0] ; clk      ;
+; N/A           ; None        ; -23.600 ns ; password[3] ; DigitalTicketCounter:DTC|price2[2] ; clk      ;
+; N/A           ; None        ; -23.600 ns ; password[3] ; DigitalTicketCounter:DTC|price2[0] ; clk      ;
+; N/A           ; None        ; -23.600 ns ; select[2]   ; DigitalTicketCounter:DTC|stock2[1] ; clk      ;
+; N/A           ; None        ; -23.600 ns ; select[2]   ; DigitalTicketCounter:DTC|stock1[1] ; clk      ;
+; N/A           ; None        ; -23.600 ns ; select[2]   ; DigitalTicketCounter:DTC|stock1[2] ; clk      ;
+; N/A           ; None        ; -23.700 ns ; select[0]   ; DigitalTicketCounter:DTC|stock0[1] ; clk      ;
+; N/A           ; None        ; -23.700 ns ; select[0]   ; DigitalTicketCounter:DTC|stock0[2] ; clk      ;
+; N/A           ; None        ; -23.700 ns ; select[1]   ; DigitalTicketCounter:DTC|stock2[1] ; clk      ;
+; N/A           ; None        ; -23.700 ns ; select[1]   ; DigitalTicketCounter:DTC|stock1[1] ; clk      ;
+; N/A           ; None        ; -23.700 ns ; select[1]   ; DigitalTicketCounter:DTC|stock1[2] ; clk      ;
+; N/A           ; None        ; -25.400 ns ; select[1]   ; DigitalTicketCounter:DTC|stock0[0] ; clk      ;
+; N/A           ; None        ; -25.600 ns ; select[0]   ; DigitalTicketCounter:DTC|stock2[2] ; clk      ;
+; N/A           ; None        ; -25.600 ns ; select[2]   ; DigitalTicketCounter:DTC|stock0[0] ; clk      ;
+; N/A           ; None        ; -25.700 ns ; select[2]   ; DigitalTicketCounter:DTC|stock2[2] ; clk      ;
+; N/A           ; None        ; -25.800 ns ; select[0]   ; DigitalTicketCounter:DTC|stock0[0] ; clk      ;
+; N/A           ; None        ; -25.800 ns ; select[1]   ; DigitalTicketCounter:DTC|stock2[2] ; clk      ;
+; N/A           ; None        ; -26.300 ns ; select[2]   ; DigitalTicketCounter:DTC|money[7]  ; clk      ;
+; N/A           ; None        ; -26.400 ns ; select[2]   ; DigitalTicketCounter:DTC|money[6]  ; clk      ;
+; N/A           ; None        ; -26.400 ns ; select[2]   ; DigitalTicketCounter:DTC|money[5]  ; clk      ;
+; N/A           ; None        ; -26.400 ns ; select[2]   ; DigitalTicketCounter:DTC|money[4]  ; clk      ;
+; N/A           ; None        ; -28.100 ns ; select[2]   ; DigitalTicketCounter:DTC|quant[2]  ; clk      ;
+; N/A           ; None        ; -28.200 ns ; select[1]   ; DigitalTicketCounter:DTC|quant[2]  ; clk      ;
+; N/A           ; None        ; -28.300 ns ; select[0]   ; DigitalTicketCounter:DTC|quant[2]  ; clk      ;
+; N/A           ; None        ; -28.400 ns ; select[2]   ; DigitalTicketCounter:DTC|quant[0]  ; clk      ;
+; N/A           ; None        ; -28.500 ns ; select[1]   ; DigitalTicketCounter:DTC|quant[0]  ; clk      ;
+; N/A           ; None        ; -28.600 ns ; select[0]   ; DigitalTicketCounter:DTC|quant[0]  ; clk      ;
+; N/A           ; None        ; -29.800 ns ; select[2]   ; DigitalTicketCounter:DTC|money[1]  ; clk      ;
+; N/A           ; None        ; -31.000 ns ; select[2]   ; DigitalTicketCounter:DTC|quant[1]  ; clk      ;
+; N/A           ; None        ; -31.100 ns ; select[1]   ; DigitalTicketCounter:DTC|quant[1]  ; clk      ;
+; N/A           ; None        ; -31.200 ns ; select[0]   ; DigitalTicketCounter:DTC|quant[1]  ; clk      ;
+; N/A           ; None        ; -31.500 ns ; select[1]   ; DigitalTicketCounter:DTC|money[0]  ; clk      ;
+; N/A           ; None        ; -33.300 ns ; select[2]   ; DigitalTicketCounter:DTC|money[2]  ; clk      ;
+; N/A           ; None        ; -34.700 ns ; select[1]   ; DigitalTicketCounter:DTC|money[7]  ; clk      ;
+; N/A           ; None        ; -34.800 ns ; select[1]   ; DigitalTicketCounter:DTC|money[6]  ; clk      ;
+; N/A           ; None        ; -34.800 ns ; select[1]   ; DigitalTicketCounter:DTC|money[5]  ; clk      ;
+; N/A           ; None        ; -34.800 ns ; select[1]   ; DigitalTicketCounter:DTC|money[4]  ; clk      ;
+; N/A           ; None        ; -35.500 ns ; select[0]   ; DigitalTicketCounter:DTC|money[0]  ; clk      ;
+; N/A           ; None        ; -35.500 ns ; select[0]   ; DigitalTicketCounter:DTC|money[7]  ; clk      ;
+; N/A           ; None        ; -35.600 ns ; select[0]   ; DigitalTicketCounter:DTC|money[6]  ; clk      ;
+; N/A           ; None        ; -35.600 ns ; select[0]   ; DigitalTicketCounter:DTC|money[5]  ; clk      ;
+; N/A           ; None        ; -35.600 ns ; select[0]   ; DigitalTicketCounter:DTC|money[4]  ; clk      ;
+; N/A           ; None        ; -36.300 ns ; select[2]   ; DigitalTicketCounter:DTC|money[3]  ; clk      ;
+; N/A           ; None        ; -38.200 ns ; select[1]   ; DigitalTicketCounter:DTC|money[1]  ; clk      ;
+; N/A           ; None        ; -39.000 ns ; select[0]   ; DigitalTicketCounter:DTC|money[1]  ; clk      ;
+; N/A           ; None        ; -41.700 ns ; select[1]   ; DigitalTicketCounter:DTC|money[2]  ; clk      ;
+; N/A           ; None        ; -42.500 ns ; select[0]   ; DigitalTicketCounter:DTC|money[2]  ; clk      ;
+; N/A           ; None        ; -44.700 ns ; select[1]   ; DigitalTicketCounter:DTC|money[3]  ; clk      ;
+; N/A           ; None        ; -45.500 ns ; select[0]   ; DigitalTicketCounter:DTC|money[3]  ; clk      ;
++---------------+-------------+------------+-------------+------------------------------------+----------+
+
+
++--------------------------+
+; Timing Analyzer Messages ;
++--------------------------+
+Info: *******************************************************************
+Info: Running Quartus II Classic Timing Analyzer
+    Info: Version 8.1 Build 163 10/28/2008 SJ Web Edition
+    Info: Processing started: Wed Feb 01 23:27:03 2023
+Info: Command: quartus_tan --read_settings_files=off --write_settings_files=off Project -c Project
+Info: Started post-fitting delay annotation
+Info: Delay annotation completed successfully
+Warning: Found pins functioning as undefined clocks and/or memory enables
+    Info: Assuming node "clk" is an undefined clock
+Warning: Found 1 node(s) in clock paths which may be acting as ripple and/or gated clocks -- node(s) analyzed as buffer(s) resulting in clock skew
+    Info: Detected ripple clock "Slow_Clock:s1|clk" as buffer
+Info: Clock "clk" has Internal fmax of 9.3 MHz between source register "DigitalTicketCounter:DTC|money[4]" and destination register "DIG3C:D1|seg[0]" (period= 107.5 ns)
+    Info: + Longest register to register delay is 103.500 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = LC2_D34; Fanout = 18; REG Node = 'DigitalTicketCounter:DTC|money[4]'
+        Info: 2: + IC(0.500 ns) + CELL(2.700 ns) = 3.200 ns; Loc. = LC4_D34; Fanout = 2; COMB Node = 'DigitalTicketCounter:DTC|Binary2BCD:B1|lpm_divide:Mod0|lpm_divide_opl:auto_generated|sign_div_unsign_akh:divider|alt_u_div_mke:divider|add_sub_g9c:add_sub_6|add_sub_cella[3]~102'
+        Info: 3: + IC(0.500 ns) + CELL(2.400 ns) = 6.100 ns; Loc. = LC1_D34; Fanout = 2; COMB Node = 'DigitalTicketCounter:DTC|Binary2BCD:B1|lpm_divide:Mod0|lpm_divide_opl:auto_generated|sign_div_unsign_akh:divider|alt_u_div_mke:divider|add_sub_g9c:add_sub_6|add_sub_cella[4]~108'
+        Info: 4: + IC(2.800 ns) + CELL(2.400 ns) = 11.300 ns; Loc. = LC8_D35; Fanout = 2; COMB Node = 'DigitalTicketCounter:DTC|Binary2BCD:B1|lpm_divide:Mod0|lpm_divide_opl:auto_generated|sign_div_unsign_akh:divider|alt_u_div_mke:divider|add_sub_g9c:add_sub_6|add_sub_cella[5]~114'
+        Info: 5: + IC(0.500 ns) + CELL(2.400 ns) = 14.200 ns; Loc. = LC1_D35; Fanout = 14; COMB Node = 'DigitalTicketCounter:DTC|Binary2BCD:B1|lpm_divide:Mod0|lpm_divide_opl:auto_generated|sign_div_unsign_akh:divider|alt_u_div_mke:divider|add_sub_g9c:add_sub_6|add_sub_cella[6]~96'
+        Info: 6: + IC(2.900 ns) + CELL(2.700 ns) = 19.800 ns; Loc. = LC7_D36; Fanout = 2; COMB Node = 'DigitalTicketCounter:DTC|Binary2BCD:B1|lpm_divide:Mod0|lpm_divide_opl:auto_generated|sign_div_unsign_akh:divider|alt_u_div_mke:divider|StageOut[51]~413'
+        Info: 7: + IC(0.500 ns) + CELL(2.700 ns) = 23.000 ns; Loc. = LC1_D36; Fanout = 2; COMB Node = 'DigitalTicketCounter:DTC|Binary2BCD:B1|lpm_divide:Mod0|lpm_divide_opl:auto_generated|sign_div_unsign_akh:divider|alt_u_div_mke:divider|add_sub_h9c:add_sub_7|add_sub_cella[4]~156'
+        Info: 8: + IC(2.800 ns) + CELL(2.400 ns) = 28.200 ns; Loc. = LC4_D37; Fanout = 2; COMB Node = 'DigitalTicketCounter:DTC|Binary2BCD:B1|lpm_divide:Mod0|lpm_divide_opl:auto_generated|sign_div_unsign_akh:divider|alt_u_div_mke:divider|add_sub_h9c:add_sub_7|add_sub_cella[5]~172'
+        Info: 9: + IC(0.500 ns) + CELL(2.400 ns) = 31.100 ns; Loc. = LC1_D37; Fanout = 1; COMB Node = 'DigitalTicketCounter:DTC|Binary2BCD:B1|lpm_divide:Mod0|lpm_divide_opl:auto_generated|sign_div_unsign_akh:divider|alt_u_div_mke:divider|add_sub_h9c:add_sub_7|add_sub_cella[6]~164'
+        Info: 10: + IC(2.800 ns) + CELL(2.400 ns) = 36.300 ns; Loc. = LC1_D38; Fanout = 14; COMB Node = 'DigitalTicketCounter:DTC|Binary2BCD:B1|lpm_divide:Mod0|lpm_divide_opl:auto_generated|sign_div_unsign_akh:divider|alt_u_div_mke:divider|add_sub_h9c:add_sub_7|add_sub_cella[7]~136'
+        Info: 11: + IC(0.500 ns) + CELL(2.700 ns) = 39.500 ns; Loc. = LC2_D38; Fanout = 4; COMB Node = 'DigitalTicketCounter:DTC|Binary2BCD:B1|lpm_divide:Mod0|lpm_divide_opl:auto_generated|sign_div_unsign_akh:divider|alt_u_div_mke:divider|StageOut[61]~416'
+        Info: 12: + IC(2.900 ns) + CELL(2.700 ns) = 45.100 ns; Loc. = LC5_D39; Fanout = 2; COMB Node = 'DigitalTicketCounter:DTC|Binary2BCD:B1|lpm_divide:Div1|lpm_divide_h1m:auto_generated|sign_div_unsign_6kh:divider|alt_u_div_eke:divider|add_sub_d9c:add_sub_3|add_sub_cella[2]~92'
+        Info: 13: + IC(0.500 ns) + CELL(2.400 ns) = 48.000 ns; Loc. = LC4_D39; Fanout = 2; COMB Node = 'DigitalTicketCounter:DTC|Binary2BCD:B1|lpm_divide:Div1|lpm_divide_h1m:auto_generated|sign_div_unsign_6kh:divider|alt_u_div_eke:divider|add_sub_d9c:add_sub_3|add_sub_cella[3]~76'
+        Info: 14: + IC(2.900 ns) + CELL(2.700 ns) = 53.600 ns; Loc. = LC1_D27; Fanout = 15; COMB Node = 'DigitalTicketCounter:DTC|Binary2BCD:B1|lpm_divide:Div1|lpm_divide_h1m:auto_generated|sign_div_unsign_6kh:divider|alt_u_div_eke:divider|add_sub_d9c:add_sub_3|add_sub_cella[3]~95'
+        Info: 15: + IC(3.700 ns) + CELL(2.700 ns) = 60.000 ns; Loc. = LC1_D40; Fanout = 2; COMB Node = 'DigitalTicketCounter:DTC|Binary2BCD:B1|lpm_divide:Div1|lpm_divide_h1m:auto_generated|sign_div_unsign_6kh:divider|alt_u_div_eke:divider|StageOut[17]~829'
+        Info: 16: + IC(2.900 ns) + CELL(1.400 ns) = 64.300 ns; Loc. = LC4_D27; Fanout = 1; COMB Node = 'DigitalTicketCounter:DTC|Binary2BCD:B1|lpm_divide:Div1|lpm_divide_h1m:auto_generated|sign_div_unsign_6kh:divider|alt_u_div_eke:divider|add_sub_e9c:add_sub_4|add_sub_cella[3]~COUT'
+        Info: 17: + IC(0.000 ns) + CELL(0.300 ns) = 64.600 ns; Loc. = LC5_D27; Fanout = 2; COMB Node = 'DigitalTicketCounter:DTC|Binary2BCD:B1|lpm_divide:Div1|lpm_divide_h1m:auto_generated|sign_div_unsign_6kh:divider|alt_u_div_eke:divider|add_sub_e9c:add_sub_4|cout'
+        Info: 18: + IC(0.000 ns) + CELL(1.200 ns) = 65.800 ns; Loc. = LC6_D27; Fanout = 15; COMB Node = 'DigitalTicketCounter:DTC|Binary2BCD:B1|lpm_divide:Div1|lpm_divide_h1m:auto_generated|sign_div_unsign_6kh:divider|alt_u_div_eke:divider|add_sub_e9c:add_sub_4|add_sub_cella[4]~159'
+        Info: 19: + IC(2.900 ns) + CELL(2.700 ns) = 71.400 ns; Loc. = LC1_D28; Fanout = 2; COMB Node = 'DigitalTicketCounter:DTC|Binary2BCD:B1|lpm_divide:Div1|lpm_divide_h1m:auto_generated|sign_div_unsign_6kh:divider|alt_u_div_eke:divider|StageOut[21]~830'
+        Info: 20: + IC(2.700 ns) + CELL(1.400 ns) = 75.500 ns; Loc. = LC8_D27; Fanout = 2; COMB Node = 'DigitalTicketCounter:DTC|Binary2BCD:B1|lpm_divide:Div1|lpm_divide_h1m:auto_generated|sign_div_unsign_6kh:divider|alt_u_div_eke:divider|add_sub_e9c:add_sub_5|add_sub_cella[2]~COUT'
+        Info: 21: + IC(1.100 ns) + CELL(0.300 ns) = 76.900 ns; Loc. = LC1_D29; Fanout = 1; COMB Node = 'DigitalTicketCounter:DTC|Binary2BCD:B1|lpm_divide:Div1|lpm_divide_h1m:auto_generated|sign_div_unsign_6kh:divider|alt_u_div_eke:divider|add_sub_e9c:add_sub_5|add_sub_cella[3]~COUT'
+        Info: 22: + IC(0.000 ns) + CELL(0.300 ns) = 77.200 ns; Loc. = LC2_D29; Fanout = 2; COMB Node = 'DigitalTicketCounter:DTC|Binary2BCD:B1|lpm_divide:Div1|lpm_divide_h1m:auto_generated|sign_div_unsign_6kh:divider|alt_u_div_eke:divider|add_sub_e9c:add_sub_5|cout'
+        Info: 23: + IC(0.000 ns) + CELL(1.200 ns) = 78.400 ns; Loc. = LC3_D29; Fanout = 13; COMB Node = 'DigitalTicketCounter:DTC|Binary2BCD:B1|lpm_divide:Div1|lpm_divide_h1m:auto_generated|sign_div_unsign_6kh:divider|alt_u_div_eke:divider|add_sub_e9c:add_sub_5|add_sub_cella[4]~179'
+        Info: 24: + IC(3.800 ns) + CELL(2.700 ns) = 84.900 ns; Loc. = LC1_D32; Fanout = 1; COMB Node = 'DigitalTicketCounter:DTC|Binary2BCD:B1|lpm_divide:Div1|lpm_divide_h1m:auto_generated|sign_div_unsign_6kh:divider|alt_u_div_eke:divider|StageOut[26]~832'
+        Info: 25: + IC(2.700 ns) + CELL(1.400 ns) = 89.000 ns; Loc. = LC5_D29; Fanout = 1; COMB Node = 'DigitalTicketCounter:DTC|Binary2BCD:B1|lpm_divide:Div1|lpm_divide_h1m:auto_generated|sign_div_unsign_6kh:divider|alt_u_div_eke:divider|add_sub_e9c:add_sub_6|add_sub_cella[2]~COUT'
+        Info: 26: + IC(0.000 ns) + CELL(0.300 ns) = 89.300 ns; Loc. = LC6_D29; Fanout = 1; COMB Node = 'DigitalTicketCounter:DTC|Binary2BCD:B1|lpm_divide:Div1|lpm_divide_h1m:auto_generated|sign_div_unsign_6kh:divider|alt_u_div_eke:divider|add_sub_e9c:add_sub_6|add_sub_cella[3]~COUT'
+        Info: 27: + IC(0.000 ns) + CELL(0.300 ns) = 89.600 ns; Loc. = LC7_D29; Fanout = 1; COMB Node = 'DigitalTicketCounter:DTC|Binary2BCD:B1|lpm_divide:Div1|lpm_divide_h1m:auto_generated|sign_div_unsign_6kh:divider|alt_u_div_eke:divider|add_sub_e9c:add_sub_6|cout'
+        Info: 28: + IC(0.000 ns) + CELL(1.200 ns) = 90.800 ns; Loc. = LC8_D29; Fanout = 7; COMB Node = 'DigitalTicketCounter:DTC|Binary2BCD:B1|lpm_divide:Div1|lpm_divide_h1m:auto_generated|sign_div_unsign_6kh:divider|alt_u_div_eke:divider|add_sub_e9c:add_sub_6|add_sub_cella[4]~183'
+        Info: 29: + IC(4.300 ns) + CELL(2.700 ns) = 97.800 ns; Loc. = LC4_D48; Fanout = 1; COMB Node = 'DIG3C:D1|BCD27segC:disp2|WideOr6~4'
+        Info: 30: + IC(0.500 ns) + CELL(2.700 ns) = 101.000 ns; Loc. = LC5_D48; Fanout = 1; COMB Node = 'DIG3C:D1|seg~1499'
+        Info: 31: + IC(0.500 ns) + CELL(2.000 ns) = 103.500 ns; Loc. = LC3_D48; Fanout = 2; REG Node = 'DIG3C:D1|seg[0]'
+        Info: Total cell delay = 57.800 ns ( 55.85 % )
+        Info: Total interconnect delay = 45.700 ns ( 44.15 % )
+    Info: - Smallest clock skew is 0.000 ns
+        Info: + Shortest clock path from clock "clk" to destination register is 7.000 ns
+            Info: 1: + IC(0.000 ns) + CELL(2.900 ns) = 2.900 ns; Loc. = PIN_91; Fanout = 244; CLK Node = 'clk'
+            Info: 2: + IC(4.100 ns) + CELL(0.000 ns) = 7.000 ns; Loc. = LC3_D48; Fanout = 2; REG Node = 'DIG3C:D1|seg[0]'
+            Info: Total cell delay = 2.900 ns ( 41.43 % )
+            Info: Total interconnect delay = 4.100 ns ( 58.57 % )
+        Info: - Longest clock path from clock "clk" to source register is 7.000 ns
+            Info: 1: + IC(0.000 ns) + CELL(2.900 ns) = 2.900 ns; Loc. = PIN_91; Fanout = 244; CLK Node = 'clk'
+            Info: 2: + IC(4.100 ns) + CELL(0.000 ns) = 7.000 ns; Loc. = LC2_D34; Fanout = 18; REG Node = 'DigitalTicketCounter:DTC|money[4]'
+            Info: Total cell delay = 2.900 ns ( 41.43 % )
+            Info: Total interconnect delay = 4.100 ns ( 58.57 % )
+    Info: + Micro clock to output delay of source is 1.400 ns
+    Info: + Micro setup delay of destination is 2.600 ns
+Info: tsu for register "DigitalTicketCounter:DTC|money[3]" (data pin = "select[0]", clock pin = "clk") is 51.400 ns
+    Info: + Longest pin to register delay is 55.800 ns
+        Info: 1: + IC(0.000 ns) + CELL(10.300 ns) = 10.300 ns; Loc. = PIN_33; Fanout = 9; PIN Node = 'select[0]'
+        Info: 2: + IC(9.300 ns) + CELL(2.700 ns) = 22.300 ns; Loc. = LC4_H30; Fanout = 7; COMB Node = 'DigitalTicketCounter:DTC|Mux6~240'
+        Info: 3: + IC(6.300 ns) + CELL(2.700 ns) = 31.300 ns; Loc. = LC4_D14; Fanout = 2; COMB Node = 'DigitalTicketCounter:DTC|Mux6~241'
+        Info: 4: + IC(0.500 ns) + CELL(2.700 ns) = 34.500 ns; Loc. = LC1_D14; Fanout = 8; COMB Node = 'DigitalTicketCounter:DTC|money~1025'
+        Info: 5: + IC(3.200 ns) + CELL(2.700 ns) = 40.400 ns; Loc. = LC6_D13; Fanout = 1; COMB Node = 'DigitalTicketCounter:DTC|money~1042'
+        Info: 6: + IC(0.500 ns) + CELL(2.700 ns) = 43.600 ns; Loc. = LC7_D13; Fanout = 1; COMB Node = 'DigitalTicketCounter:DTC|money~1043'
+        Info: 7: + IC(0.500 ns) + CELL(2.700 ns) = 46.800 ns; Loc. = LC8_D13; Fanout = 1; COMB Node = 'DigitalTicketCounter:DTC|money~1044'
+        Info: 8: + IC(0.500 ns) + CELL(2.700 ns) = 50.000 ns; Loc. = LC1_D13; Fanout = 1; COMB Node = 'DigitalTicketCounter:DTC|money~1045'
+        Info: 9: + IC(3.800 ns) + CELL(2.000 ns) = 55.800 ns; Loc. = LC3_D34; Fanout = 19; REG Node = 'DigitalTicketCounter:DTC|money[3]'
+        Info: Total cell delay = 31.200 ns ( 55.91 % )
+        Info: Total interconnect delay = 24.600 ns ( 44.09 % )
+    Info: + Micro setup delay of destination is 2.600 ns
+    Info: - Shortest clock path from clock "clk" to destination register is 7.000 ns
+        Info: 1: + IC(0.000 ns) + CELL(2.900 ns) = 2.900 ns; Loc. = PIN_91; Fanout = 244; CLK Node = 'clk'
+        Info: 2: + IC(4.100 ns) + CELL(0.000 ns) = 7.000 ns; Loc. = LC3_D34; Fanout = 19; REG Node = 'DigitalTicketCounter:DTC|money[3]'
+        Info: Total cell delay = 2.900 ns ( 41.43 % )
+        Info: Total interconnect delay = 4.100 ns ( 58.57 % )
+Info: tco from clock "clk" to destination pin "mdisp[5]" through register "DIG3C:D1|seg[5]" is 18.300 ns
+    Info: + Longest clock path from clock "clk" to source register is 7.000 ns
+        Info: 1: + IC(0.000 ns) + CELL(2.900 ns) = 2.900 ns; Loc. = PIN_91; Fanout = 244; CLK Node = 'clk'
+        Info: 2: + IC(4.100 ns) + CELL(0.000 ns) = 7.000 ns; Loc. = LC6_D50; Fanout = 2; REG Node = 'DIG3C:D1|seg[5]'
+        Info: Total cell delay = 2.900 ns ( 41.43 % )
+        Info: Total interconnect delay = 4.100 ns ( 58.57 % )
+    Info: + Micro clock to output delay of source is 1.400 ns
+    Info: + Longest register to pin delay is 9.900 ns
+        Info: 1: + IC(0.000 ns) + CELL(0.000 ns) = 0.000 ns; Loc. = LC6_D50; Fanout = 2; REG Node = 'DIG3C:D1|seg[5]'
+        Info: 2: + IC(4.900 ns) + CELL(5.000 ns) = 9.900 ns; Loc. = PIN_55; Fanout = 0; PIN Node = 'mdisp[5]'
+        Info: Total cell delay = 5.000 ns ( 50.51 % )
+        Info: Total interconnect delay = 4.900 ns ( 49.49 % )
+Info: th for register "Debounce:d8|D_FF:d1|Q" (data pin = "stockc", clock pin = "clk") is 7.100 ns
+    Info: + Longest clock path from clock "clk" to destination register is 18.900 ns
+        Info: 1: + IC(0.000 ns) + CELL(2.900 ns) = 2.900 ns; Loc. = PIN_91; Fanout = 244; CLK Node = 'clk'
+        Info: 2: + IC(4.100 ns) + CELL(1.400 ns) = 8.400 ns; Loc. = LC1_G51; Fanout = 17; REG Node = 'Slow_Clock:s1|clk'
+        Info: 3: + IC(10.500 ns) + CELL(0.000 ns) = 18.900 ns; Loc. = LC5_I9; Fanout = 3; REG Node = 'Debounce:d8|D_FF:d1|Q'
+        Info: Total cell delay = 4.300 ns ( 22.75 % )
+        Info: Total interconnect delay = 14.600 ns ( 77.25 % )
+    Info: + Micro hold delay of destination is 3.100 ns
+    Info: - Shortest pin to register delay is 14.900 ns
+        Info: 1: + IC(0.000 ns) + CELL(10.300 ns) = 10.300 ns; Loc. = PIN_127; Fanout = 1; PIN Node = 'stockc'
+        Info: 2: + IC(2.900 ns) + CELL(1.700 ns) = 14.900 ns; Loc. = LC5_I9; Fanout = 3; REG Node = 'Debounce:d8|D_FF:d1|Q'
+        Info: Total cell delay = 12.000 ns ( 80.54 % )
+        Info: Total interconnect delay = 2.900 ns ( 19.46 % )
+Info: Quartus II Classic Timing Analyzer was successful. 0 errors, 2 warnings
+    Info: Peak virtual memory: 198 megabytes
+    Info: Processing ended: Wed Feb 01 23:27:04 2023
+    Info: Elapsed time: 00:00:01
+    Info: Total CPU time (on all processors): 00:00:01
+
+

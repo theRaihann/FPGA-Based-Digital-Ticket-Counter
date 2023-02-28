@@ -1,0 +1,7 @@
+Info (10281): Verilog HDL Declaration information at Project.v(44): object "d1" differs only in case from object "D1" in the same scope
+Info (10281): Verilog HDL Declaration information at Project.v(45): object "d2" differs only in case from object "D2" in the same scope
+Info (10281): Verilog HDL Declaration information at Project.v(46): object "d3" differs only in case from object "D3" in the same scope
+Info (10281): Verilog HDL Declaration information at Project.v(47): object "d4" differs only in case from object "D4" in the same scope
+Warning (10268): Verilog HDL information at DIG3C.v(20): always construct contains both blocking and non-blocking assignments
+Warning (10268): Verilog HDL information at DIG3A.v(20): always construct contains both blocking and non-blocking assignments
+Warning (10268): Verilog HDL information at Slow_Clock.v(15): always construct contains both blocking and non-blocking assignments

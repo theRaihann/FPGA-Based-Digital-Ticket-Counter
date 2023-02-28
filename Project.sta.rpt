@@ -1,0 +1,285 @@
+TimeQuest Timing Analyzer report for Project
+Wed Jan 11 00:41:59 2023
+Quartus II Version 8.1 Build 163 10/28/2008 SJ Web Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. TimeQuest Timing Analyzer Summary
+  3. Clocks
+  4. Fmax Summary
+  5. Setup Summary
+  6. Hold Summary
+  7. Recovery Summary
+  8. Removal Summary
+  9. Minimum Pulse Width
+ 10. Clock to Output Times
+ 11. Minimum Clock to Output Times
+ 12. Setup Transfers
+ 13. Hold Transfers
+ 14. Report TCCS
+ 15. Report RSKM
+ 16. Unconstrained Paths
+ 17. TimeQuest Timing Analyzer Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 1991-2008 Altera Corporation
+Your use of Altera Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Altera Program License 
+Subscription Agreement, Altera MegaCore Function License 
+Agreement, or other applicable license agreement, including, 
+without limitation, that your use is for the sole purpose of 
+programming logic devices manufactured by Altera and sold by 
+Altera or its authorized distributors.  Please refer to the 
+applicable agreement for further details.
+
+
+
++----------------------------------------------------------------------+
+; TimeQuest Timing Analyzer Summary                                    ;
++--------------------+-------------------------------------------------+
+; Quartus II Version ; Version 8.1 Build 163 10/28/2008 SJ Web Edition ;
+; Revision Name      ; Project                                         ;
+; Device Family      ; MAX II                                          ;
+; Device Name        ; EPM240T100C5                                    ;
+; Timing Models      ; Final                                           ;
+; Delay Model        ; Slow Model                                      ;
+; Rise/Fall Delays   ; Unavailable                                     ;
++--------------------+-------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Clocks                                                                                                                                                                             ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+------------+
+; Clock Name ; Type ; Period ; Frequency  ; Rise  ; Fall  ; Duty Cycle ; Divide by ; Multiply by ; Phase ; Offset ; Edge List ; Edge Shift ; Inverted ; Master ; Source ; Targets    ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+------------+
+; clk_in     ; Base ; 1.000  ; 1000.0 MHz ; 0.000 ; 0.500 ;            ;           ;             ;       ;        ;           ;            ;          ;        ;        ; { clk_in } ;
++------------+------+--------+------------+-------+-------+------------+-----------+-------------+-------+--------+-----------+------------+----------+--------+--------+------------+
+
+
++--------------------------------------------------+
+; Fmax Summary                                     ;
++------------+-----------------+------------+------+
+; Fmax       ; Restricted Fmax ; Clock Name ; Note ;
++------------+-----------------+------------+------+
+; 104.71 MHz ; 104.71 MHz      ; clk_in     ;      ;
++------------+-----------------+------------+------+
+This panel reports FMAX for every clock in the design, regardless of the user-specified clock periods.  FMAX is only computed for paths where the source and destination registers or ports are driven by the same clock.  Paths of different clocks, including generated clocks, are ignored.  For paths between a clock and its inversion, FMAX is computed as if the rising and falling edges are scaled along with FMAX, such that the duty cycle (in terms of a percentage) is maintained. Altera recommends that you always use clock constraints and other slack reports for sign-off analysis.
+
+
++---------------------------------+
+; Setup Summary                   ;
++--------+--------+---------------+
+; Clock  ; Slack  ; End Point TNS ;
++--------+--------+---------------+
+; clk_in ; -8.550 ; -234.416      ;
++--------+--------+---------------+
+
+
++--------------------------------+
+; Hold Summary                   ;
++--------+-------+---------------+
+; Clock  ; Slack ; End Point TNS ;
++--------+-------+---------------+
+; clk_in ; 2.107 ; 0.000         ;
++--------+-------+---------------+
+
+
+--------------------
+; Recovery Summary ;
+--------------------
+No paths to report.
+
+
+-------------------
+; Removal Summary ;
+-------------------
+No paths to report.
+
+
++---------------------------------------------------------------------------------------------+
+; Minimum Pulse Width                                                                         ;
++--------+--------------+----------------+------------------+--------+------------+-----------+
+; Slack  ; Actual Width ; Required Width ; Type             ; Clock  ; Clock Edge ; Target    ;
++--------+--------------+----------------+------------------+--------+------------+-----------+
+; -2.289 ; 1.000        ; 3.289          ; Port Rate        ; clk_in ; Rise       ; clk_in    ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; clk_in ; Rise       ; clk~reg0  ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; clk_in ; Rise       ; clk~reg0  ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; clk_in ; Rise       ; count[0]  ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; clk_in ; Rise       ; count[0]  ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; clk_in ; Rise       ; count[10] ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; clk_in ; Rise       ; count[10] ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; clk_in ; Rise       ; count[11] ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; clk_in ; Rise       ; count[11] ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; clk_in ; Rise       ; count[12] ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; clk_in ; Rise       ; count[12] ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; clk_in ; Rise       ; count[13] ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; clk_in ; Rise       ; count[13] ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; clk_in ; Rise       ; count[14] ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; clk_in ; Rise       ; count[14] ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; clk_in ; Rise       ; count[15] ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; clk_in ; Rise       ; count[15] ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; clk_in ; Rise       ; count[16] ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; clk_in ; Rise       ; count[16] ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; clk_in ; Rise       ; count[17] ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; clk_in ; Rise       ; count[17] ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; clk_in ; Rise       ; count[18] ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; clk_in ; Rise       ; count[18] ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; clk_in ; Rise       ; count[19] ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; clk_in ; Rise       ; count[19] ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; clk_in ; Rise       ; count[1]  ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; clk_in ; Rise       ; count[1]  ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; clk_in ; Rise       ; count[20] ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; clk_in ; Rise       ; count[20] ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; clk_in ; Rise       ; count[21] ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; clk_in ; Rise       ; count[21] ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; clk_in ; Rise       ; count[22] ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; clk_in ; Rise       ; count[22] ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; clk_in ; Rise       ; count[23] ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; clk_in ; Rise       ; count[23] ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; clk_in ; Rise       ; count[24] ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; clk_in ; Rise       ; count[24] ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; clk_in ; Rise       ; count[25] ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; clk_in ; Rise       ; count[25] ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; clk_in ; Rise       ; count[26] ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; clk_in ; Rise       ; count[26] ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; clk_in ; Rise       ; count[27] ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; clk_in ; Rise       ; count[27] ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; clk_in ; Rise       ; count[28] ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; clk_in ; Rise       ; count[28] ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; clk_in ; Rise       ; count[29] ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; clk_in ; Rise       ; count[29] ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; clk_in ; Rise       ; count[2]  ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; clk_in ; Rise       ; count[2]  ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; clk_in ; Rise       ; count[30] ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; clk_in ; Rise       ; count[30] ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; clk_in ; Rise       ; count[31] ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; clk_in ; Rise       ; count[31] ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; clk_in ; Rise       ; count[3]  ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; clk_in ; Rise       ; count[3]  ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; clk_in ; Rise       ; count[4]  ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; clk_in ; Rise       ; count[4]  ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; clk_in ; Rise       ; count[5]  ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; clk_in ; Rise       ; count[5]  ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; clk_in ; Rise       ; count[6]  ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; clk_in ; Rise       ; count[6]  ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; clk_in ; Rise       ; count[7]  ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; clk_in ; Rise       ; count[7]  ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; clk_in ; Rise       ; count[8]  ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; clk_in ; Rise       ; count[8]  ;
+; 0.234  ; 0.500        ; 0.266          ; High Pulse Width ; clk_in ; Rise       ; count[9]  ;
+; 0.234  ; 0.500        ; 0.266          ; Low Pulse Width  ; clk_in ; Rise       ; count[9]  ;
++--------+--------------+----------------+------------------+--------+------------+-----------+
+
+
++-----------------------------------------------------------------------+
+; Clock to Output Times                                                 ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; clk       ; clk_in     ; 9.219 ; 9.219 ; Rise       ; clk_in          ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++-----------------------------------------------------------------------+
+; Minimum Clock to Output Times                                         ;
++-----------+------------+-------+-------+------------+-----------------+
+; Data Port ; Clock Port ; Rise  ; Fall  ; Clock Edge ; Clock Reference ;
++-----------+------------+-------+-------+------------+-----------------+
+; clk       ; clk_in     ; 9.219 ; 9.219 ; Rise       ; clk_in          ;
++-----------+------------+-------+-------+------------+-----------------+
+
+
++-------------------------------------------------------------------+
+; Setup Transfers                                                   ;
++------------+----------+----------+----------+----------+----------+
+; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------+----------+----------+----------+----------+----------+
+; clk_in     ; clk_in   ; 1233     ; 0        ; 0        ; 0        ;
++------------+----------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
++-------------------------------------------------------------------+
+; Hold Transfers                                                    ;
++------------+----------+----------+----------+----------+----------+
+; From Clock ; To Clock ; RR Paths ; FR Paths ; RF Paths ; FF Paths ;
++------------+----------+----------+----------+----------+----------+
+; clk_in     ; clk_in   ; 1233     ; 0        ; 0        ; 0        ;
++------------+----------+----------+----------+----------+----------+
+Entries labeled "false path" only account for clock-to-clock false paths and not path-based false paths. As a result, actual path counts may be lower than reported.
+
+
+---------------
+; Report TCCS ;
+---------------
+No dedicated SERDES Transmitter circuitry present in device or used in design.
+
+
+---------------
+; Report RSKM ;
+---------------
+No dedicated SERDES Receiver circuitry present in device or used in design.
+
+
++------------------------------------------------+
+; Unconstrained Paths                            ;
++---------------------------------+-------+------+
+; Property                        ; Setup ; Hold ;
++---------------------------------+-------+------+
+; Illegal Clocks                  ; 0     ; 0    ;
+; Unconstrained Clocks            ; 0     ; 0    ;
+; Unconstrained Input Ports       ; 0     ; 0    ;
+; Unconstrained Input Port Paths  ; 0     ; 0    ;
+; Unconstrained Output Ports      ; 1     ; 1    ;
+; Unconstrained Output Port Paths ; 1     ; 1    ;
++---------------------------------+-------+------+
+
+
++------------------------------------+
+; TimeQuest Timing Analyzer Messages ;
++------------------------------------+
+Info: *******************************************************************
+Info: Running Quartus II TimeQuest Timing Analyzer
+    Info: Version 8.1 Build 163 10/28/2008 SJ Web Edition
+    Info: Processing started: Wed Jan 11 00:41:58 2023
+Info: Command: quartus_sta Project -c Project
+Info: qsta_default_script.tcl version: #2
+Info: Started post-fitting delay annotation
+Info: Delay annotation completed successfully
+Warning: Found USE_TIMEQUEST_TIMING_ANALYZER=OFF. The TimeQuest Timing Analyzer is not the default Timing Analysis Tool during full compilation.
+Critical Warning: Synopsys Design Constraints File file not found: 'Project.sdc'. A Synopsys Design Constraints File is required by the TimeQuest Timing Analyzer to get proper timing constraints. Without it, the Compiler will not properly optimize the design.
+Info: No user constrained base clocks found in the design. Calling "derive_clocks -period 1.0"
+Info: Deriving Clocks
+    Info: create_clock -period 1.000 -name clk_in clk_in
+Critical Warning: Timing requirements not met
+Info: Worst-case setup slack is -8.550
+    Info:     Slack End Point TNS Clock 
+    Info: ========= ============= =====================
+    Info:    -8.550      -234.416 clk_in 
+Info: Worst-case hold slack is 2.107
+    Info:     Slack End Point TNS Clock 
+    Info: ========= ============= =====================
+    Info:     2.107         0.000 clk_in 
+Info: No recovery paths to report
+Info: No removal paths to report
+Critical Warning: Found minimum pulse width or period violations. See Report Minimum Pulse Width for details.
+Info: Design is not fully constrained for setup requirements
+Info: Design is not fully constrained for hold requirements
+Info: Quartus II TimeQuest Timing Analyzer was successful. 0 errors, 4 warnings
+    Info: Peak virtual memory: 185 megabytes
+    Info: Processing ended: Wed Jan 11 00:41:59 2023
+    Info: Elapsed time: 00:00:01
+    Info: Total CPU time (on all processors): 00:00:00
+
+
